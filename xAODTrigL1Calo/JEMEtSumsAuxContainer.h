@@ -1,0 +1,12 @@
+#ifndef XAODTRIGL1CALO_JEMETSUMSAUXCONTAINER_H
+#define XAODTRIGL1CALO_JEMETSUMSAUXCONTAINER_H
+
+// Local include(s):
+#include "xAODTrigL1Calo/versions/JEMEtSumsAuxContainer_v1.h"
+
+namespace xAOD {
+   /// Define the latest version of the JEMEtSums auxiliary container
+   typedef JEMEtSumsAuxContainer_v1 JEMEtSumsAuxContainer;
+}
+
+#endif // XAODTRIGL1CALO_JEMETSUMSAUXCONTAINER_H

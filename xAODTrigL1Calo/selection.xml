@@ -1,0 +1,49 @@
+<lcgdict>
+
+  <!--  dictionaries: -->
+  <!--   JEMHits -->
+  <class name="xAOD::JEMHits_v1" />
+  <class name="xAOD::JEMHitsContainer_v1"
+         id="070F54C6-320D-4F22-BD42-C87C6AF99C38" />
+  <class name="xAOD::JEMHitsAuxContainer_v1"
+         id="CE2C5182-53DD-46E0-9DFA-61C214A8FCE5" />  
+    
+  <!-- JEMEtSums -->
+  <class name="xAOD::JEMEtSums_v1" />
+  <class name="xAOD::JEMEtSumsContainer_v1"
+         id="DDB6D476-D1E2-490E-A81B-8D4FC65F1D81" />
+  <class name="xAOD::JEMEtSumsAuxContainer_v1"
+         id="4D3C658D-597A-414E-AAA3-BE61A1D664C3" /> 
+  
+  <!-- JEMRoI -->
+  <class name="xAOD::JEMRoI_v1" />
+  <class name="xAOD::JEMRoIContainer_v1"
+         id="52384828-A57D-477D-A8C8-597C78D02686" />
+  <class name="xAOD::JEMRoIAuxContainer_v1"
+         id="959C24E5-9746-4C70-83FA-A0140C710039" /> 
+  
+
+  <!--   CPMHits -->
+  <class name="xAOD::CPMHits_v1" />
+  <class name="xAOD::CPMHitsContainer_v1"
+         id="3D15DF3F-E014-42E3-9614-37E4CD535F9C" />
+  <class name="xAOD::CPMHitsAuxContainer_v1"
+         id="28FCEB20-A9DC-4FED-9FDD-00F46948E92E" />  
+  
+  <!--   CPMTower -->
+  <class name="xAOD::CPMTower_v1" />
+  <class name="xAOD::CPMTowerContainer_v1"
+         id="D220C61E-ECD1-427C-86D0-2C88E00ABBD2" />
+  <class name="xAOD::CPMTowerAuxContainer_v1"
+         id="529B6BD7-7B7D-438C-94D7-BAA49A022C47" />  
+  
+  <!--   CPMRoI -->
+  <class name="xAOD::CPMRoI_v1" />
+  <class name="xAOD::CPMRoIContainer_v1"
+         id="4B48CC07-6B22-46EC-9BD5-51379664B9BC" />
+  <class name="xAOD::CPMRoIAuxContainer_v1"
+         id="8FA92C8D-214F-4B8F-84CA-CB7267CAD0F2" />  
+
+
+</lcgdict>
+
