@@ -43,7 +43,48 @@
          id="4B48CC07-6B22-46EC-9BD5-51379664B9BC" />
   <class name="xAOD::CPMRoIAuxContainer_v1"
          id="8FA92C8D-214F-4B8F-84CA-CB7267CAD0F2" />  
+  
 
+  <!--   CMMCPHits -->
+  <class name="xAOD::CMMCPHits_v1" />
+  <class name="xAOD::CMMCPHitsContainer_v1"
+         id="8826CC48-CD08-4FD7-9AC4-358A4888271F" />
+  <class name="xAOD::CMMCPHitsAuxContainer_v1"
+         id="1951D4B4-D471-4256-8F0D-D666043E2889" />  
+  
+  <!--   CMMEtSums -->
+  <class name="xAOD::CMMEtSums_v1" />
+  <class name="xAOD::CMMEtSumsContainer_v1"
+         id="186A613D-0C91-4880-9B09-B41C28B17B53" />
+  <class name="xAOD::CMMEtSumsAuxContainer_v1"
+         id="A072EDD3-880D-46D0-A120-48C116FDB14E" /> 
+  
+  <!--   CMMJetHits -->
+  <class name="xAOD::CMMJetHits_v1" />
+  <class name="xAOD::CMMJetHitsContainer_v1"
+         id="43B6130D-4C3F-4E22-9FE2-680E6DFA149F" />
+  <class name="xAOD::CMMJetHitsAuxContainer_v1"
+         id="B3C8D000-0E7F-4A0D-8F05-6DA36FFC9DD7" />  
+  
+  <!--   CMMRoI -->
+  <class name="xAOD::CMMRoI_v1" />
+  <class name="xAOD::CMMRoIAuxInfo_v1"
+         id="B0CAB5B5-6B6B-437D-B353-1397C1F01B7E" />  
+  
+
+  <!--   JetElement -->
+  <class name="xAOD::JetElement_v1" />
+  <class name="xAOD::JetElementContainer_v1"
+         id="B1103844-7187-4305-B20A-748591A54145" />
+  <class name="xAOD::JetElementAuxContainer_v1"
+         id="7A0A2307-5729-4306-B520-4F75BBCC8E76" />  
+  
+  <!--   RODHeader -->
+  <class name="xAOD::RODHeader_v1" />
+  <class name="xAOD::RODHeaderContainer_v1"
+         id="AA0924D2-23E2-47B3-8C7D-9D3B104B8990" />
+  <class name="xAOD::RODHeaderAuxContainer_v1"
+         id="6524E46D-CC9C-43D2-BAE0-55310A6B316C" />  
 
 </lcgdict>
 

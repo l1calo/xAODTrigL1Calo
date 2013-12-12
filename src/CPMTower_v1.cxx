@@ -56,12 +56,6 @@ namespace xAOD{
   {
     return this->had_energy();
   }
-
-  /** returns coordinate of TT */
-  LVL1::Coordinate CPMTower_v1::coord() const
-  {
-    return LVL1::Coordinate( this->phi(), this->eta() );
-  }
         
   /** Utilities to report on status of tower */   
   int CPMTower_v1::emError() const

@@ -12,8 +12,6 @@ use AthLinks      AthLinks-*	  Control
 
 # EDM package(s):
 use xAODCore      xAODCore-*      Event/xAOD
-use TrigT1Interfaces TrigT1Interfaces-* Trigger/TrigT1
-
 
 library xAODTrigL1Calo *.cxx
 apply_pattern installed_library

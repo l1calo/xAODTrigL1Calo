@@ -1,3 +1,7 @@
+2013-12-12 John Morris <john.morris@cern.ch>
+	* Tag as xAODTrigL1Calo-00-00-02
+	* Adding CMM, JetElement and RODHeader
+
 2013-12-09 John Morris <john.morris@cern.ch>
 	* Tag as xAODTrigL1Calo-00-00-01
 	* CPM Hits,RoI,Tower

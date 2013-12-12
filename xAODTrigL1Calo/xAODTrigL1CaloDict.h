@@ -33,6 +33,29 @@
 #include "xAODTrigL1Calo/versions/CPMRoIContainer_v1.h"
 #include "xAODTrigL1Calo/versions/CPMRoIAuxContainer_v1.h"
 
+#include "xAODTrigL1Calo/versions/CMMCPHits_v1.h"
+#include "xAODTrigL1Calo/versions/CMMCPHitsContainer_v1.h"
+#include "xAODTrigL1Calo/versions/CMMCPHitsAuxContainer_v1.h"
+
+#include "xAODTrigL1Calo/versions/CMMEtSums_v1.h"
+#include "xAODTrigL1Calo/versions/CMMEtSumsContainer_v1.h"
+#include "xAODTrigL1Calo/versions/CMMEtSumsAuxContainer_v1.h"
+
+#include "xAODTrigL1Calo/versions/CMMJetHits_v1.h"
+#include "xAODTrigL1Calo/versions/CMMJetHitsContainer_v1.h"
+#include "xAODTrigL1Calo/versions/CMMJetHitsAuxContainer_v1.h"
+
+#include "xAODTrigL1Calo/versions/CMMRoI_v1.h"
+#include "xAODTrigL1Calo/versions/CMMRoIAuxInfo_v1.h"
+
+#include "xAODTrigL1Calo/versions/JetElement_v1.h"
+#include "xAODTrigL1Calo/versions/JetElementContainer_v1.h"
+#include "xAODTrigL1Calo/versions/JetElementAuxContainer_v1.h"
+
+#include "xAODTrigL1Calo/versions/RODHeader_v1.h"
+#include "xAODTrigL1Calo/versions/RODHeaderContainer_v1.h"
+#include "xAODTrigL1Calo/versions/RODHeaderAuxContainer_v1.h"
+
 #ifdef __GCCXML__
 namespace {
    struct GCCXML_DUMMY_INSTANTIATION {
@@ -96,7 +119,60 @@ namespace {
       std::vector< ElementLink< xAOD::CPMRoIContainer_v1 > > CPMRoI_el2;
       // Element link vector(s):
       ElementLinkVector< xAOD::CPMRoIContainer_v1 > CPMRoI_elv1;
-      std::vector< ElementLinkVector< xAOD::CPMRoIContainer_v1 > > CPMRoI_elv2;         
+      std::vector< ElementLinkVector< xAOD::CPMRoIContainer_v1 > > CPMRoI_elv2;  
+      
+ 
+      // CMMCPHits    
+      // Container(s):
+      xAOD::CMMCPHitsContainer_v1 CMMCPHits_c1;
+      // Element link(s):
+      ElementLink< xAOD::CMMCPHitsContainer_v1 > CMMCPHits_el1;
+      std::vector< ElementLink< xAOD::CMMCPHitsContainer_v1 > > CMMCPHits_el2;
+      // Element link vector(s):
+      ElementLinkVector< xAOD::CMMCPHitsContainer_v1 > CMMCPHits_elv1;
+      std::vector< ElementLinkVector< xAOD::CMMCPHitsContainer_v1 > > CMMCPHits_elv2; 
+      
+      // CMMEtSums    
+      // Container(s):
+      xAOD::CMMEtSumsContainer_v1 CMMEtSums_c1;
+      // Element link(s):
+      ElementLink< xAOD::CMMEtSumsContainer_v1 > CMMEtSums_el1;
+      std::vector< ElementLink< xAOD::CMMEtSumsContainer_v1 > > CMMEtSums_el2;
+      // Element link vector(s):
+      ElementLinkVector< xAOD::CMMEtSumsContainer_v1 > CMMEtSums_elv1;
+      std::vector< ElementLinkVector< xAOD::CMMEtSumsContainer_v1 > > CMMEtSums_elv2; 
+      
+      // CMMJetHits    
+      // Container(s):
+      xAOD::CMMJetHitsContainer_v1 CMMJetHits_c1;
+      // Element link(s):
+      ElementLink< xAOD::CMMJetHitsContainer_v1 > CMMJetHits_el1;
+      std::vector< ElementLink< xAOD::CMMJetHitsContainer_v1 > > CMMJetHits_el2;
+      // Element link vector(s):
+      ElementLinkVector< xAOD::CMMJetHitsContainer_v1 > CMMJetHits_elv1;
+      std::vector< ElementLinkVector< xAOD::CMMJetHitsContainer_v1 > > CMMJetHits_elv2; 
+      
+      
+      // JetElement    
+      // Container(s):
+      xAOD::JetElementContainer_v1 JetElement_c1;
+      // Element link(s):
+      ElementLink< xAOD::JetElementContainer_v1 > JetElement_el1;
+      std::vector< ElementLink< xAOD::JetElementContainer_v1 > > JetElement_el2;
+      // Element link vector(s):
+      ElementLinkVector< xAOD::JetElementContainer_v1 > JetElement_elv1;
+      std::vector< ElementLinkVector< xAOD::JetElementContainer_v1 > > JetElement_elv2;   
+      
+      // RODHeader    
+      // Container(s):
+      xAOD::RODHeaderContainer_v1 RODHeader_c1;
+      // Element link(s):
+      ElementLink< xAOD::RODHeaderContainer_v1 > RODHeader_el1;
+      std::vector< ElementLink< xAOD::RODHeaderContainer_v1 > > RODHeader_el2;
+      // Element link vector(s):
+      ElementLinkVector< xAOD::RODHeaderContainer_v1 > RODHeader_elv1;
+      std::vector< ElementLinkVector< xAOD::RODHeaderContainer_v1 > > RODHeader_elv2;        
+     
    };
 }
 #endif // __GCCXML__

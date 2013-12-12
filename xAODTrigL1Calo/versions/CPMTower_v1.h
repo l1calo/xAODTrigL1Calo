@@ -4,8 +4,6 @@
 #include "AthLinks/ElementLink.h"
 #include "AthContainers/AuxElement.h"
 
-#include "TrigT1Interfaces/Coordinate.h"
-
 namespace xAOD {
 
    /// Description of a CPMTower
@@ -55,9 +53,6 @@ namespace xAOD {
     /** return references to the vectors containing the ET values. */
     const std::vector<int> emEnergyVec() const;
     const std::vector<int> hadEnergyVec() const;
-
-    /** returns coordinate of TT */
-    LVL1::Coordinate coord() const;
           
     /** Utilities to report on status of tower */   
     int emError() const;
