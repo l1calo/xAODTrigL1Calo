@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_XAODTRIGL1CALOCALOEVENTDICT_H
 #define XAODTRIGL1CALO_XAODTRIGL1CALOCALOEVENTDICT_H
 
@@ -5,6 +7,7 @@
 #include <vector>
 
 // EDM include(s):
+#include "AthLinks/DataLink.h"
 #include "AthLinks/ElementLink.h"
 #include "AthLinks/ElementLinkVector.h"
 
@@ -120,17 +123,17 @@ namespace {
       // Element link vector(s):
       ElementLinkVector< xAOD::CPMRoIContainer_v1 > CPMRoI_elv1;
       std::vector< ElementLinkVector< xAOD::CPMRoIContainer_v1 > > CPMRoI_elv2;  
-      
- 
-      // CMMCPHits    
+
+      // CMMCPHits
       // Container(s):
       xAOD::CMMCPHitsContainer_v1 CMMCPHits_c1;
+      // Data link(s):
+      DataLink< xAOD::CMMCPHitsContainer_v1 > CMMCPHits_dl1;
+      std::vector< DataLink< xAOD::CMMCPHitsContainer_v1 > > CMMCPHits_dl2;
       // Element link(s):
       ElementLink< xAOD::CMMCPHitsContainer_v1 > CMMCPHits_el1;
       std::vector< ElementLink< xAOD::CMMCPHitsContainer_v1 > > CMMCPHits_el2;
-      // Element link vector(s):
-      ElementLinkVector< xAOD::CMMCPHitsContainer_v1 > CMMCPHits_elv1;
-      std::vector< ElementLinkVector< xAOD::CMMCPHitsContainer_v1 > > CMMCPHits_elv2; 
+      std::vector< std::vector< ElementLink< xAOD::CMMCPHitsContainer_v1 > > > CMMCPHits_el3;
       
       // CMMEtSums    
       // Container(s):

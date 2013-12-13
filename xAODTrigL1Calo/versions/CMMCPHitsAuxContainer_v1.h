@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CMMCPHITSAUXCONTAINER_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CMMCPHITSAUXCONTAINER_V1_H
 
@@ -7,9 +9,17 @@
 // EDM include(s):
 #include "xAODCore/AuxContainerBase.h"
 
-
 namespace xAOD{
 
+  /// Brief description
+  ///
+  /// Some additional brief description, nothing extensive...
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$
+  ///
   class CMMCPHitsAuxContainer_v1 : public AuxContainerBase {
   public:
     // Default constructor

@@ -43,15 +43,19 @@
          id="4B48CC07-6B22-46EC-9BD5-51379664B9BC" />
   <class name="xAOD::CPMRoIAuxContainer_v1"
          id="8FA92C8D-214F-4B8F-84CA-CB7267CAD0F2" />  
-  
 
   <!--   CMMCPHits -->
   <class name="xAOD::CMMCPHits_v1" />
   <class name="xAOD::CMMCPHitsContainer_v1"
          id="8826CC48-CD08-4FD7-9AC4-358A4888271F" />
   <class name="xAOD::CMMCPHitsAuxContainer_v1"
-         id="1951D4B4-D471-4256-8F0D-D666043E2889" />  
-  
+         id="1951D4B4-D471-4256-8F0D-D666043E2889" />
+  <class name="DataLink<xAOD::CMMCPHitsContainer_v1>" />
+  <class name="std::vector<DataLink<xAOD::CMMCPHitsContainer_v1> >" />
+  <class name="ElementLink<xAOD::CMMCPHitsContainer_v1>" />
+  <class name="std::vector<ElementLink<xAOD::CMMCPHitsContainer_v1> >" />
+  <class name="std::vector<std::vector<ElementLink<xAOD::CMMCPHitsContainer_v1> > >" />
+
   <!--   CMMEtSums -->
   <class name="xAOD::CMMEtSums_v1" />
   <class name="xAOD::CMMEtSumsContainer_v1"

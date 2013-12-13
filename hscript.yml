@@ -1,0 +1,42 @@
+## -*- yaml -*-
+# $Id$
+
+package: {
+  name:    Event/xAOD/xAODTrigL1Calo,
+  authors: [
+    John Morris <john.morris@cern.ch>
+  ],
+
+  # Declare the package's dependencies:
+  deps: {
+    public: [
+      AtlasPolicy,
+      Control/AthContainers,
+      Control/AthLinks,
+      Event/xAOD/xAODCore,
+    ],
+    private: [
+      External/AtlasROOT,
+    ],
+    runtime: [],
+  }
+}
+
+build: {
+  ## Build the library:
+  xAODTrigL1Calo: {
+    features: "atlas_library",
+    source:   "src/*.cxx",
+    use:      [
+      "AthContainers", "xAODCore", "AthLinks",
+    ],
+  },
+  ## Build the dictionary:
+  xAODTrigL1CaloDict: {
+    features:       "atlas_dictionary",
+    source:         [ "xAODTrigL1Calo/xAODTrigL1CaloDict.h",
+                      "src/dict/*.cxx" ],
+    selection_file: "xAODTrigL1Calo/selection.xml",
+    use:            [ "xAODTrigL1Calo", "ROOT", "AthLinks" ],
+  },
+}

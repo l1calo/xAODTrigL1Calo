@@ -1,3 +1,15 @@
+2013-12-13 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Set the "Id Revision Date" keywords on all the source files.
+	* Used CMMCPHits as an example of how all the other classes
+	  should be updated. Demonstrating how documentation should be
+	  provided, and how the macros from xAODCore should be used.
+	  This included defining all the ElementLink/DataLink dictionaries
+	  as well.
+	* Added standalone compilation capabilities to the package.
+	  (hscript.yml)
+	* Not tagging, this is just supposed to be an example for further
+	  improvements.
+
 2013-12-12 John Morris <john.morris@cern.ch>
 	* Tag as xAODTrigL1Calo-00-00-02
 	* Adding CMM, JetElement and RODHeader
