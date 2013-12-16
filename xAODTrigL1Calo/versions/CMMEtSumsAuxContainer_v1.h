@@ -1,4 +1,5 @@
 // Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CMMETSUMSAUXCONTAINER_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CMMETSUMSAUXCONTAINER_V1_H
 
@@ -10,6 +11,13 @@
 
 
 namespace xAOD{
+  
+  /// AuxContainer for CMMEtSums
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
 
   class CMMEtSumsAuxContainer_v1 : public AuxContainerBase {
   public:
