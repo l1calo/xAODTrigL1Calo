@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CMMETSUMS_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CMMETSUMS_V1_H
 
@@ -13,7 +15,8 @@ namespace xAOD {
    ///
    /// @author John Morris <john.morris@cern.ch>
    ///
-   /// $Date: 2013-12-10
+   /// $Revision$
+   /// $Date$  
    ///
    class CMMEtSums_v1 : public SG::AuxElement{
    public:
