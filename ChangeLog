@@ -1,3 +1,7 @@
+2013-12-17 John Morris <john.morris@cern.ch>
+	* Tag as xAODTrigL1Calo-00-00-03
+	* CMMRoI guid in selection.xml
+
 2013-12-13 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
 	* Set the "Id Revision Date" keywords on all the source files.
 	* Used CMMCPHits as an example of how all the other classes

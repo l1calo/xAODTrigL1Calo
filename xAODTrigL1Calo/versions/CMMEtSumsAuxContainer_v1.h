@@ -12,7 +12,7 @@
 
 namespace xAOD{
   
-  /// AuxContainer for CMMEtSums
+  /// AuxContainer for CMMEtSums_v1
   ///
   /// @author John Morris <john.morris@cern.ch>
   ///

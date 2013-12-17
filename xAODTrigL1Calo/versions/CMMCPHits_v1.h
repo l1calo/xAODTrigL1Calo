@@ -24,54 +24,54 @@ namespace xAOD {
      // Default constructor
      CMMCPHits_v1();
 
-     /// Some description for the property
+     /// get crate number
      int crate() const;
-     /// Description of what is being set here
+     /// set crate number
      void setCrate(int);
 
-     /// Some description for the property
+     /// get dataID
      int dataID() const;
-     /// Description of what is being set here
+     /// set dataID
      void setDataID(int);
 
-     /// Some description for the property
+     /// get peak 
      int peak() const;
-     /// Description of what is being set here
+     /// set peak
      void setPeak(int);
 
-     /// Some description for the property
+     /// get hitsVec0 - hits for all time slices
      const std::vector<unsigned int>& hitsVec0() const;
-     /// Description of what is being set here
+     /// set hitsVec0 - hits for all time slices
      void setHitsVec0(const std::vector<unsigned int>&);
 
-     /// Some description for the property
+     /// get hitsVec1 - hits for all time slices
      const std::vector<unsigned int>& hitsVec1() const;
-     /// Description of what is being set here
+     /// set hitsVec1 - hits for all time slices
      void setHitsVec1(const std::vector<unsigned int>&);  
 
-     /// Some description for the property
+     /// get errorVec0 - errors for all time slices
      const std::vector<int>& errorVec0() const;
-     /// Description of what is being set here
+     /// set errorVec0 - errors for all time slices
      void setErrorVec0(const std::vector<int>&);
 
-     /// Some description for the property
+     /// get errorVec1 - errors for all time slices
      const std::vector<int>& errorVec1() const;
-     /// Description of what is being set here
+     /// set errorVec1 - errors for all time slices
      void setErrorVec1(const std::vector<int>&);        
 
-     /// Some description for this function
+     /// add hits. Internally calls setHitsVecX(hitsX) and setErrorVecX(errorX)
      void addHits(const std::vector<unsigned int>& hits0,
                   const std::vector<unsigned int>& hits1,
                   const std::vector<int>& error0,
                   const std::vector<int>& error1); 
 
-     /// Some description for this function
+     /// get hit word0 for hitsVec0[peak] - time slice that (hopefully) contains the collision
      unsigned int hitWord0() const;
-     /// Some description for this function
+     /// get hit word1 for hitsVec1[peak] - time slice that (hopefully) contains the collision
      unsigned int hitWord1() const;
-     /// Some description for this function
+     /// get error for errorVec0[peak] - time slice that (hopefully) contains the collision
      int error0() const;
-     /// Some description for this function
+     /// get error for errorVec1[peak] - time slice that (hopefully) contains the collision
      int error1() const;
 
    }; // class CMMCPHits_v1

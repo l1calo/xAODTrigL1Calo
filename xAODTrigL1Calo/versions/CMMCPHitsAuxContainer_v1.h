@@ -11,9 +11,7 @@
 
 namespace xAOD{
 
-  /// Brief description
-  ///
-  /// Some additional brief description, nothing extensive...
+  /// AuxContainer for CMMCPHits_v1
   ///
   /// @author John Morris <john.morris@cern.ch>
   ///
