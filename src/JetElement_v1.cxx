@@ -26,22 +26,114 @@ namespace xAOD{
   AUXSTORE_OBJECT_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , hadErrorVec , setHadErrorVec )
   AUXSTORE_OBJECT_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , linkErrorVec , setLinkErrorVec )    
  
-  /** Add ET to triggered time slice */
-  /** this will add energy to the JE. It's really intended for
-     JetElementMaker to use when creating JEs. */
-  void JetElement_v1::addEnergy(int emEnergy, int hadEnergy)
+  void JetElement_v1::addEnergy(int emEnergyIn, int hadEnergyIn)
   {
+    /// EM Section
+    
+    /// Calclate the modified energy
+    /// if it is above saturation threshold, set it to the saturation threshold
+    int modifiedEmEnergy = this->emEnergy() + emEnergyIn;
+    if( modifiedEmEnergy > m_layerSaturationThreshold ){
+      modifiedEmEnergy = m_layerSaturationThreshold;
+    }
+    
+    // copy (I don't like this) the current Aux const data member vector to a non-const stack vector
+    // modify the content of the stack vector and set it as the Aux data member
+    std::vector<int> modifiedEmEnergyVec;
+    const std::vector<int> currentEmEnergyVec = this->emEnergyVec();
+    for(std::vector<int>::const_iterator i=currentEmEnergyVec.begin();i!=currentEmEnergyVec.end();++i){
+      modifiedEmEnergyVec.push_back( (*i) );
+    }
+    modifiedEmEnergyVec[ this->peak() ] = modifiedEmEnergy;
+    this->setEmEnergyVec( modifiedEmEnergyVec );
+    
+    
+    /// Had Section
+    
+    /// Calclate the modified energy
+    /// if it is above saturation threshold, set it to the saturation threshold
+    int modifiedHadEnergy = this->hadEnergy() + hadEnergyIn;
+    if( modifiedHadEnergy > m_layerSaturationThreshold ){
+      modifiedEmEnergy = m_layerSaturationThreshold;
+    }
+    
+    // copy (I don't like this) the current Aux const data member vector to a non-const stack vector
+    // modify the content of the stack vector and set it as the Aux data member
+    std::vector<int> modifiedHadEnergyVec;
+    const std::vector<int> currentHadEnergyVec = this->hadEnergyVec();
+    for(std::vector<int>::const_iterator i=currentHadEnergyVec.begin();i!=currentHadEnergyVec.end();++i){
+      modifiedHadEnergyVec.push_back( (*i) );
+    }
+    modifiedHadEnergyVec[ this->peak() ] = modifiedHadEnergy;
+    this->setHadEnergyVec( modifiedHadEnergyVec );    
+    
     
   }
   
-  /* Add ET values to specified slice */
-  /** add data for one timeslice. Used by bytestream converter. */
-  void JetElement_v1::addSlice(int slice, int emEnergy, int hadEnergy,int emError, int hadError, int linkError)
+
+  void JetElement_v1::addSlice(int slice, int emEnergyIn, int hadEnergyIn,int emErrorIn, int hadErrorIn, int linkErrorIn)
   {
+    /// This functions works just like addEnergy, it's just got more in it
+
+    // EM Energy
+    int modifiedEmEnergy = this->emSliceEnergy( slice ) + emEnergyIn;
+    if( modifiedEmEnergy > m_layerSaturationThreshold ){
+      modifiedEmEnergy = m_layerSaturationThreshold;
+    }   
+    std::vector<int> modifiedEmEnergyVec;
+    const std::vector<int> currentEmEnergyVec = this->emEnergyVec();
+    for(std::vector<int>::const_iterator i=currentEmEnergyVec.begin();i!=currentEmEnergyVec.end();++i){
+      modifiedEmEnergyVec.push_back( (*i) );
+    }
+    modifiedEmEnergyVec[ slice ] = modifiedEmEnergy;
+    this->setEmEnergyVec( modifiedEmEnergyVec ); 
+    
+    // Had Energy
+    int modifiedHadEnergy = this->hadSliceEnergy( slice ) + hadEnergyIn;
+    if( modifiedHadEnergy > m_layerSaturationThreshold ){
+      modifiedEmEnergy = m_layerSaturationThreshold;
+    }
+    std::vector<int> modifiedHadEnergyVec;
+    const std::vector<int> currentHadEnergyVec = this->hadEnergyVec();
+    for(std::vector<int>::const_iterator i=currentHadEnergyVec.begin();i!=currentHadEnergyVec.end();++i){
+      modifiedHadEnergyVec.push_back( (*i) );
+    }
+    modifiedHadEnergyVec[ slice ] = modifiedHadEnergy;
+    this->setHadEnergyVec( modifiedHadEnergyVec );      
+    
+    // EM Error
+    int modifiedEmError = this->emErrorVec()[ slice ] + emErrorIn;
+    std::vector<int> modifiedEmErrorVec;
+    const std::vector<int> currentEmErrorVec = this->emErrorVec();
+    for(std::vector<int>::const_iterator i=currentEmErrorVec.begin();i!=currentEmErrorVec.end();++i){
+      modifiedEmErrorVec.push_back( (*i) );
+    }
+    modifiedEmErrorVec[ slice ] = modifiedEmError;
+    this->setEmErrorVec( modifiedEmErrorVec );  
+    
+    // Had Error
+    int modifiedHadError = this->hadErrorVec()[ slice ] + hadErrorIn;
+    std::vector<int> modifiedHadErrorVec;
+    const std::vector<int> currentHadErrorVec = this->hadErrorVec();
+    for(std::vector<int>::const_iterator i=currentHadErrorVec.begin();i!=currentHadErrorVec.end();++i){
+      modifiedHadErrorVec.push_back( (*i) );
+    }
+    modifiedHadErrorVec[ slice ] = modifiedHadError;
+    this->setHadErrorVec( modifiedHadErrorVec );   
+    
+    // Link Error
+    int modifiedLinkError = this->linkErrorVec()[ slice ] + linkErrorIn;
+    std::vector<int> modifiedLinkErrorVec;
+    const std::vector<int> currentLinkErrorVec = this->linkErrorVec();
+    for(std::vector<int>::const_iterator i=currentLinkErrorVec.begin();i!=currentLinkErrorVec.end();++i){
+      modifiedLinkErrorVec.push_back( (*i) );
+    }
+    modifiedLinkErrorVec[ slice ] = modifiedLinkError;
+    this->setLinkErrorVec( modifiedLinkErrorVec );      
+    
     
   }
 
-  /** Return ET for peak slice */   
   int JetElement_v1::emEnergy()  const
   {
     if( this->emEnergyVec()[ this->peak() ] < m_layerSaturationThreshold) {
@@ -69,7 +161,6 @@ namespace xAOD{
     return this->emEnergy() + this->hadEnergy();  
   }
 
-  /** return the ET values for a specified slice */
   int JetElement_v1::emSliceEnergy(int slice) const
   {
     if( slice >= 0 && slice < (int)this->emEnergyVec().size() ) {
@@ -103,7 +194,6 @@ namespace xAOD{
   }
   
 
-  /** Error codes and utility information */
   bool JetElement_v1::isSaturated()    const
   {
     if( this->energy() == m_saturationThreshold ){
