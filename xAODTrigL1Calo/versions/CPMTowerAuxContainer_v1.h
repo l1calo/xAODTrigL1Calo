@@ -24,10 +24,10 @@ namespace xAOD{
     CPMTowerAuxContainer_v1();
 
   private:
-    std::vector<std::vector<int> > emEnergy;
-    std::vector<std::vector<int> > hadEnergy;
-    std::vector<std::vector<int> > emError;
-    std::vector<std::vector<int> > hadError;
+    std::vector<std::vector<int> > emEnergyVec;
+    std::vector<std::vector<int> > hadEnergyVec;
+    std::vector<std::vector<int> > emErrorVec;
+    std::vector<std::vector<int> > hadErrorVec;
     std::vector<float> phi;
     std::vector<float> eta;
     std::vector<int> peak;  

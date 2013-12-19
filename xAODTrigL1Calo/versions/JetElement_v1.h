@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_JETELEMENT_V1_H
 #define XAODTRIGL1CALO_VERSIONS_JETELEMENT_V1_H
 
@@ -6,74 +8,100 @@
 
 namespace xAOD {
 
-   /// Description of a JetElement
-   ///
-   /// This is a first stab at how a JetElement could behave in the
-   /// xAOD EDM. Just brainstorming for now.
-   ///
-   /// @author John Morris <john.morris@cern.ch>
-   ///
-   /// $Date: 2013-12-10
-   ///
-   class JetElement_v1 : public SG::AuxElement{
-   public:
+  /// Description of JetElement_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
+  
+  class JetElement_v1 : public SG::AuxElement{
+    public:
       // Default constructor
       JetElement_v1();
       
+      /// get phi (note that for L1Calo phi runs from 0 to 2pi)
       float phi() const;
+      /// set phi
       void setPhi(float);
       
+      /// get eta
       float eta() const;
+      /// set eta
       void setEta(float); 
       
+      /// get key
       unsigned int key() const;
+      /// set key
       void setKey(unsigned int);
       
+      /// get peak
       int peak() const;
+      /// set key
       void setPeak(int);
       
+      /// get emEnergyVec - emEnergy for all time slices
       const std::vector<int>& emEnergyVec() const;
+      /// set emEnergyVec - emEnergy for all time slices
       void setEmEnergyVec(const std::vector<int>&);
       
+      /// get hadEnergyVec - hadEnergy for all time slices
       const std::vector<int>& hadEnergyVec() const;
+      /// set hadEnergyVec - hadEnergy for all time slices
       void setHadEnergyVec(const std::vector<int>&); 
       
+      /// get emErrorVec - emError for all time slices
       const std::vector<int>& emErrorVec() const;
+      /// set emErrorVec - emError for all time slices
       void setEmErrorVec(const std::vector<int>&);
       
+      /// get hadErrorVec - hadError for all time slices
       const std::vector<int>& hadErrorVec() const;
+      /// set hadErrorVec - hadError for all time slices
       void setHadErrorVec(const std::vector<int>&);      
-    
+
+      /// get linkErrorVec - linkError for all time slices
       const std::vector<int>& linkErrorVec() const;
+      /// set linkErrorVec - linkError for all time slices
       void setLinkErrorVec(const std::vector<int>&); 
-     
-      /** Add ET to triggered time slice */
+      
+      /// Add ET to triggered time slice 
       void addEnergy(int emEnergy, int hadEnergy);
-      /* Add ET values to specified slice */
+      /// Add ET values to specified slice 
       void addSlice(int slice, int emEnergy, int hadEnergy,int emError, int hadError, int linkError);
 
-      /** Return ET for peak slice */   
+      /// get emEnery for emEnergyVec[peak]  - time slice that (hopefully) contains the collision  
       int emEnergy()  const;
+      /// get hadEnery for hadEnergyVec[peak]  - time slice that (hopefully) contains the collision 
       int hadEnergy() const;
+      /// get total energy. returns emEnergy() + hadEnergy()
       int energy()    const;
 
-      /** return the ET values for a specified slice */
+      /// get emEnery for emEnergyVec[slice] - time slice for arbitary slice
       int emSliceEnergy(int slice) const;
+      /// get hadEnery for hadEnergyVec[slice] - time slice for arbitary slice
       int hadSliceEnergy(int slice) const;
+      /// get total energy. returns emSliceEnergy(slice) + hadSliceEnergy(slice)
       int sliceEnergy(int slice) const;
 
-      /** Error codes and utility information */
+      /// is JetElement saturated?
       bool isSaturated()    const;
+      /// is EM component of JetElement saturated?
       bool isEmSaturated()  const;
-      bool isHadSaturated() const; 
-      int emError()   const;
-      int hadError()  const;
-      int linkError() const;
+      /// is Had component of JetElement saturated?
+      bool isHadSaturated() const;
       
-   private:
+      /// get emError for emErrorVec[peak] - time slice that (hopefully) contains the collision
+      int emError()   const;
+      /// get hadError for hadErrorVec[peak] - time slice that (hopefully) contains the collision
+      int hadError()  const;
+      /// get linkError for linkErrorVec[peak] - time slice that (hopefully) contains the collision
+      int linkError() const;
+    
+    private:
       static const int m_saturationThreshold = 1023;
       static const int m_layerSaturationThreshold = 511;     
-   };
+  };
 } // namespace xAOD
 
 // Set up a CLID for the class:
@@ -81,5 +109,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::JetElement_v1 , 165900946 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_JETELEMENT_V1_H

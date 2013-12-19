@@ -1,3 +1,5 @@
+// $Id$
+
 // System include(s):
 #include <cmath>
 
@@ -7,17 +9,18 @@
 // Local include(s):
 #include "xAODTrigL1Calo/versions/CMMRoI_v1.h"
 
-namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMRoI_v1 , uint32_t , jetEtRoiWord , setJetEtRoiWord )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMRoI_v1 , uint32_t , energyRoiWord0 , setEnergyRoiWord0 ) 
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMRoI_v1 , uint32_t , energyRoiWord1 , setEnergyRoiWord1 ) 
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMRoI_v1 , uint32_t , energyRoiWord2 , setEnergyRoiWord2 ) 
+namespace xAOD{ 
   
   CMMRoI_v1::CMMRoI_v1() :
     SG::AuxElement()
   {        
-  }
+  }  
   
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMRoI_v1 , uint32_t , jetEtRoiWord , setJetEtRoiWord )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMRoI_v1 , uint32_t , energyRoiWord0 , setEnergyRoiWord0 ) 
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMRoI_v1 , uint32_t , energyRoiWord1 , setEnergyRoiWord1 ) 
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMRoI_v1 , uint32_t , energyRoiWord2 , setEnergyRoiWord2 ) 
+   
   /// Set RoI word with ID check
   bool CMMRoI_v1::setRoiWord(uint32_t roiWord)
   {

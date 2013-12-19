@@ -1,3 +1,5 @@
+// $Id$
+
 // System include(s):
 #include <cmath>
 
@@ -17,12 +19,12 @@ namespace xAOD{
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , crate , setCrate )  
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , dataID , setDataID )  
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , peak , setPeak )  
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , EtVec , setEtVec )  
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , ExVec , setExVec )  
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , EyVec , setEyVec )    
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , EtErrorVec , setEtErrorVec )  
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , ExErrorVec , setExErrorVec )  
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , EyErrorVec , setEyErrorVec )    
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , etVec , setEtVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , exVec , setExVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , eyVec , setEyVec )    
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , etErrorVec , setEtErrorVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , exErrorVec , setExErrorVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , eyErrorVec , setEyErrorVec )    
     
   void CMMEtSums_v1::addEt(const std::vector<unsigned int>& Et,const std::vector<int>& EtError)
   {
@@ -42,34 +44,34 @@ namespace xAOD{
     this->setEyErrorVec( EyError );    
   }
 
-  unsigned int CMMEtSums_v1::Et() const
+  unsigned int CMMEtSums_v1::et() const
   {
-    return this->EtVec().at( this->peak() );
+    return this->etVec()[ this->peak() ];
   }
   
-  unsigned int CMMEtSums_v1::Ex() const
+  unsigned int CMMEtSums_v1::ex() const
   {
-    return this->ExVec().at( this->peak() );
+    return this->exVec()[ this->peak() ];
   }
   
-  unsigned int CMMEtSums_v1::Ey() const
+  unsigned int CMMEtSums_v1::ey() const
   {
-    return this->EyVec().at( this->peak() );
+    return this->eyVec()[ this->peak() ];
   }
   
-  int CMMEtSums_v1::EtError() const
+  int CMMEtSums_v1::etError() const
   {
-    return this->EtErrorVec().at( this->peak() );
+    return this->etErrorVec()[ this->peak() ];
   }
   
-  int CMMEtSums_v1::ExError() const
+  int CMMEtSums_v1::exError() const
   {
-    return this->ExErrorVec().at( this->peak() );
+    return this->exErrorVec()[ this->peak() ];
   }
   
-  int CMMEtSums_v1::EyError() const
+  int CMMEtSums_v1::eyError() const
   {
-   return this->EyErrorVec().at( this->peak() ); 
+   return this->eyErrorVec()[ this->peak() ]; 
   }
   
 } // namespace xAOD

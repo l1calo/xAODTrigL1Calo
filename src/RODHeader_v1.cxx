@@ -1,3 +1,5 @@
+// $Id$
+
 // System include(s):
 #include <cmath>
 
@@ -124,48 +126,48 @@ namespace xAOD{
   // Status bits - word 1
   bool RODHeader_v1::bcnMismatch()        const  
   {
-    return (this->statusWords().empty()) ? false : this->statusWords().at(0) & 0x1;  
+    return (this->statusWords().empty()) ? false : this->statusWords()[ 0 ] & 0x1;  
   }
   
   bool RODHeader_v1::gLinkTimeout()       const  
   {
-    return (this->statusWords().empty()) ? false : this->statusWords().at(0) & 0x4;  
+    return (this->statusWords().empty()) ? false : this->statusWords()[ 0 ] & 0x4;  
   }
   
   bool RODHeader_v1::dataTransportError() const  
   {
-    return (this->statusWords().empty()) ? false : this->statusWords().at(0) & 0x8;  
+    return (this->statusWords().empty()) ? false : this->statusWords()[ 0 ] & 0x8;  
   }
   
   bool RODHeader_v1::rodFifoOverflow()    const  
   {
-    return (this->statusWords().empty()) ? false : this->statusWords().at(0) & 0x10;  
+    return (this->statusWords().empty()) ? false : this->statusWords()[ 0 ] & 0x10;  
   }
   
   bool RODHeader_v1::lvdsLinkError()      const  
   {
-    return (this->statusWords().empty()) ? false : this->statusWords().at(0) & 0x10000;  
+    return (this->statusWords().empty()) ? false : this->statusWords()[ 0 ] & 0x10000;  
   }
   
   bool RODHeader_v1::cmmParityError()     const  
   {
-    return (this->statusWords().empty()) ? false : this->statusWords().at(0) & 0x20000;  
+    return (this->statusWords().empty()) ? false : this->statusWords()[ 0 ] & 0x20000;  
   }
   
   bool RODHeader_v1::gLinkError()         const  
   {
-    return (this->statusWords().empty()) ? false : this->statusWords().at(0) & 0x40000;  
+    return (this->statusWords().empty()) ? false : this->statusWords()[ 0 ] & 0x40000;  
   }
   
   // Status bits - word 2
   bool RODHeader_v1::limitedRoISet()      const  
   {
-    return (this->statusWords().size() < 2) ? false : this->statusWords().at(1) & 0x2;  
+    return (this->statusWords().size() < 2) ? false : this->statusWords()[ 1 ] & 0x2;  
   }
   
   bool RODHeader_v1::triggerTypeTimeout() const  
   {
-    return (this->statusWords().size() < 2) ? false : this->statusWords().at(1) & 0x10000;  
+    return (this->statusWords().size() < 2) ? false : this->statusWords()[ 1 ] & 0x10000;  
   }
        
       

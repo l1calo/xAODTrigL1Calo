@@ -9,16 +9,13 @@
 
 namespace xAOD {
 
-  /// Description of a CMMCPHits
-  ///
-  /// This is a first stab at how a CMMCPHits could behave in the
-  /// xAOD EDM. Just brainstorming for now.
+  /// Description of CMMCPHits_v1
   ///
   /// @author John Morris <john.morris@cern.ch>
   ///
   /// $Revision$
   /// $Date$
-  ///
+
   class CMMCPHits_v1 : public SG::AuxElement{
     public:
       // Default constructor
@@ -64,7 +61,7 @@ namespace xAOD {
                   const std::vector<unsigned int>& hits1,
                   const std::vector<int>& error0,
                   const std::vector<int>& error1); 
-
+      
       /// get hit word0 for hitsVec0[peak] - time slice that (hopefully) contains the collision
       unsigned int hitWord0() const;
       /// get hit word1 for hitsVec1[peak] - time slice that (hopefully) contains the collision
@@ -75,7 +72,7 @@ namespace xAOD {
       int error1() const;
       
       /// Backwards Compatibility with Trigger/TrigT1/TrigT1CaloEvent
-      /// Run1 EDM did not strictly follow cammelCaps
+      /// Run1 EDM did not strictly follow camelCaseNotation 
       /// See above for description
       inline unsigned int HitWord0() const {return this->hitWord0();}
       inline unsigned int HitWord1() const {return this->hitWord1();}
@@ -94,5 +91,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::CMMCPHits_v1 , 1938820 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CMMCPHITS_V1_H

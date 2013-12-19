@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_JEMROI_V1_H
 #define XAODTRIGL1CALO_VERSIONS_JEMROI_V1_H
 
@@ -6,21 +8,21 @@
 
 namespace xAOD {
 
-   /// Description of a JEMRoI
-   ///
-   /// This is a first stab at how a JEMRoI could behave in the
-   /// xAOD EDM. Just brainstorming for now.
-   ///
-   /// @author John Morris <john.morris@cern.ch>
-   ///
-   /// $Date: 2013-12-09 
-   ///
-   class JEMRoI_v1 : public SG::AuxElement{
-   public:
-     // Default constructor
-     JEMRoI_v1();
+  /// Description of JEMRoI_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
+  
+  class JEMRoI_v1 : public SG::AuxElement{
+    public:
+      // Default constructor
+      JEMRoI_v1();
           
+      /// get roiWord
       uint32_t roiWord() const;
+      /// set roiWord
       void setRoiWord(uint32_t);
       
       /// Return crate number (0-1)
@@ -41,8 +43,8 @@ namespace xAOD {
       int parity()     const;
       /// Return saturation flag (0/1)
       int saturation() const;            
-      
-   private:
+    
+    private:
       /// RoI word ID
       static const int s_wordIdVal       = 0x4;
       //  Data locations
@@ -67,8 +69,8 @@ namespace xAOD {
       static const int s_saturationMask  = 0x1;
       static const int s_forwardHitsMask = 0xf;
       static const int s_mainHitsMask    = 0xff;     
-                   
-   };
+                  
+  };
 } // namespace xAOD
 
 // Set up a CLID for the class:
@@ -76,5 +78,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::JEMRoI_v1 , 9883081 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_JEMROI_V1_H

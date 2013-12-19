@@ -34,25 +34,22 @@ namespace xAOD{
 
   unsigned int CMMCPHits_v1::hitWord0() const
   {
-    // Remember that at(...) is slower than [...]. But in return it throws
-    // a kind-of-useful exception when using a wrong index. Question is if
-    // it can happen here...
-    return this->hitsVec0().at( this->peak() ); 
+    return this->hitsVec0()[ this->peak() ]; 
   }
 
   unsigned int CMMCPHits_v1::hitWord1() const
   {
-    return this->hitsVec1().at( this->peak() );
+    return this->hitsVec1()[ this->peak() ];
   }
 
   int CMMCPHits_v1::error0() const
   {
-    return this->errorVec0().at( this->peak() ); 
+    return this->errorVec0()[ this->peak() ]; 
   }
 
   int CMMCPHits_v1::error1() const
   {
-    return this->errorVec1().at( this->peak() );
+    return this->errorVec1()[ this->peak() ];
   }  
 
 } // namespace xAOD

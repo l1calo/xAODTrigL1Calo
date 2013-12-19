@@ -1,3 +1,5 @@
+// $Id$
+
 // Local include(s):
 #include "xAODTrigL1Calo/versions/JEMHitsAuxContainer_v1.h"
         

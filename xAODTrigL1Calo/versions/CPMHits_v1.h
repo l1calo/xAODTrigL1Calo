@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CPMHITS_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CPMHITS_V1_H
 
@@ -5,43 +7,59 @@
 #include "AthContainers/AuxElement.h"
 
 namespace xAOD {
+  
+  /// Description of CPMHits_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
 
-   /// Description of a CPMHits
-   ///
-   /// This is a first stab at how a CPMHits could behave in the
-   /// xAOD EDM. Just brainstorming for now.
-   ///
-   /// @author John Morris <john.morris@cern.ch>
-   ///
-   /// $Date: 2013-12-09
-   ///
-   class CPMHits_v1 : public SG::AuxElement{
-   public:
-     // Default constructor
-     CPMHits_v1();
-          
-     int crate() const;
-     void setCrate(int);
-     
-     int module() const;
-     void setModule(int);
+  class CPMHits_v1 : public SG::AuxElement{
+    public:
+      // Default constructor
+      CPMHits_v1();
+       
+      /// get crate number
+      int crate() const;
+      /// set crate number
+      void setCrate(int);
+      
+      /// get module
+      int module() const;
+      /// set module
+      void setModule(int);
 
-     int peak() const;
-     void setPeak(int);     
-     
-     const std::vector<unsigned int>& hitsVec0() const;     
-     void setHitsVec0(const std::vector<unsigned int>&);
-     
-     const std::vector<unsigned int>& hitsVec1() const;     
-     void setHitsVec1(const std::vector<unsigned int>&);     
-     
-     // backwards compatability with TrigT1CaloEvent
-     void addHits(const std::vector<unsigned int>&  hits0,const std::vector<unsigned int>&  hits1);
-          
-     unsigned int HitWord0() const;
-     unsigned int HitWord1() const;
+      /// get peak
+      int peak() const;
+      /// set peak
+      void setPeak(int);     
+      
+      /// get hitsVec0  - hits for all time slices
+      const std::vector<unsigned int>& hitsVec0() const; 
+      /// set hitsVec0  - hits for all time slices
+      void setHitsVec0(const std::vector<unsigned int>&);
 
-   };
+      /// get hitsVec1  - hits for all time slices      
+      const std::vector<unsigned int>& hitsVec1() const; 
+      /// set hitsVec1  - hits for all time slices      
+      void setHitsVec1(const std::vector<unsigned int>&);     
+      
+      // add hits. Internally calls setHitsVec0(hits0);setHitsVec1(hits1);
+      void addHits(const std::vector<unsigned int>&  hits0,const std::vector<unsigned int>&  hits1);
+      
+      /// get hitword for hitsVec0[peak] - time slice that (hopefully) contains the collision
+      unsigned int hitWord0() const;
+      /// get hitword for hitsVec1[peak] - time slice that (hopefully) contains the collision
+      unsigned int hitWord1() const;      
+      
+      /// Backwards Compatibility with Trigger/TrigT1/TrigT1CaloEvent
+      /// Run1 EDM did not strictly follow camelCaseNotation
+      /// See above for description        
+      inline unsigned int HitWord0() const {return this->hitWord0();}
+      inline unsigned int HitWord1() const {return this->hitWord1();}
+
+  };
 } // namespace xAOD
 
 // Set up a CLID for the class:
@@ -49,5 +67,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::CPMHits_v1 , 39223308 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CPMHITS_V1_H

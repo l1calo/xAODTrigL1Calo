@@ -1,3 +1,5 @@
+// $Id$
+
 // Local include(s):
 #include "xAODTrigL1Calo/versions/CPMHitsAuxContainer_v1.h"
         

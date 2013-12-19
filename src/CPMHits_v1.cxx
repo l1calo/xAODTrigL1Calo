@@ -1,3 +1,5 @@
+// $Id$
+
 // System include(s):
 #include <cmath>
 
@@ -26,14 +28,14 @@ namespace xAOD{
     this->setHitsVec1( hits1 );
   }
           
-  unsigned int CPMHits_v1::HitWord0() const
+  unsigned int CPMHits_v1::hitWord0() const
   {
-    return this->hitsVec0().at( this->peak() ); 
+    return this->hitsVec0()[ this->peak() ]; 
   }
   
-  unsigned int CPMHits_v1::HitWord1() const
+  unsigned int CPMHits_v1::hitWord1() const
   {
-    return this->hitsVec1().at( this->peak() );
+    return this->hitsVec1()[ this->peak() ];
   }
   
 } // namespace xAOD

@@ -1,3 +1,5 @@
+// $Id$
+
 // Local include(s):
 #include "xAODTrigL1Calo/versions/JEMEtSumsAuxContainer_v1.h"
         
@@ -9,9 +11,9 @@ namespace xAOD {
     AUX_VARIABLE( crate );
     AUX_VARIABLE( module );
     AUX_VARIABLE( peak ); 
-    AUX_VARIABLE( EtVec );
-    AUX_VARIABLE( ExVec );
-    AUX_VARIABLE( EyVec );    
+    AUX_VARIABLE( etVec );
+    AUX_VARIABLE( exVec );
+    AUX_VARIABLE( eyVec );    
   }
   
 } // namespace xAOD

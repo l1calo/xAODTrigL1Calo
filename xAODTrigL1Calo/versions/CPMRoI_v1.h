@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CPMROI_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CPMROI_V1_H
 
@@ -5,22 +7,22 @@
 #include "AthContainers/AuxElement.h"
 
 namespace xAOD {
+ 
+  /// Description of CPMRoI_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
 
-   /// Description of a CPMRoI
-   ///
-   /// This is a first stab at how a CPMRoI could behave in the
-   /// xAOD EDM. Just brainstorming for now.
-   ///
-   /// @author John Morris <john.morris@cern.ch>
-   ///
-   /// $Date: 2013-12-09
-   ///
-   class CPMRoI_v1 : public SG::AuxElement{
-   public:
-     // Default constructor
-     CPMRoI_v1();
-     
+  class CPMRoI_v1 : public SG::AuxElement{
+    public:
+      // Default constructor
+      CPMRoI_v1();
+      
+      /// get roiWord
       uint32_t roiWord() const;
+      /// set roiWord
       void setRoiWord(uint32_t);     
           
       /// Return crate number (0-1)
@@ -39,8 +41,8 @@ namespace xAOD {
       int parity()     const;
       /// Return saturation flag (0/1)
       int saturation() const;      
-      
-   private:
+    
+    private:
       /// RoI word ID
       static const int s_wordIdVal       = 0x0;
       //  Data locations
@@ -70,5 +72,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::CPMRoI_v1 , 5414895 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CPMROI_V1_H

@@ -1,3 +1,5 @@
+// $Id$
+
 // System include(s):
 #include <cmath>
 
@@ -31,19 +33,19 @@ namespace xAOD{
     return result;
   }
   
-    unsigned int JEMEtSums_v1::Et() const
-    {
-      return this->etVec().at( this->peak() );  
-    }
-    
-    unsigned int JEMEtSums_v1::Ex() const
-    {
-      return this->exVec().at( this->peak() ); 
-    }
-    
-    unsigned int JEMEtSums_v1::Ey() const
-    {
-      return this->eyVec().at( this->peak() ); 
-    }
+  unsigned int JEMEtSums_v1::et() const
+  {
+    return this->etVec()[ this->peak() ];  
+  }
+  
+  unsigned int JEMEtSums_v1::ex() const
+  {
+    return this->exVec()[ this->peak() ]; 
+  }
+  
+  unsigned int JEMEtSums_v1::ey() const
+  {
+    return this->eyVec()[ this->peak() ]; 
+  }
   
 } // namespace xAOD

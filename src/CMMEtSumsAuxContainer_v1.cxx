@@ -1,3 +1,5 @@
+// $Id$
+
 // Local include(s):
 #include "xAODTrigL1Calo/versions/CMMEtSumsAuxContainer_v1.h"
         
@@ -9,12 +11,12 @@ namespace xAOD {
     AUX_VARIABLE( crate );
     AUX_VARIABLE( dataID );
     AUX_VARIABLE( peak ); 
-    AUX_VARIABLE( EtVec );
-    AUX_VARIABLE( ExVec );  
-    AUX_VARIABLE( EyVec );
-    AUX_VARIABLE( EtErrorVec );
-    AUX_VARIABLE( ExErrorVec );  
-    AUX_VARIABLE( EyErrorVec );   
+    AUX_VARIABLE( etVec );
+    AUX_VARIABLE( exVec );  
+    AUX_VARIABLE( eyVec );
+    AUX_VARIABLE( etErrorVec );
+    AUX_VARIABLE( exErrorVec );  
+    AUX_VARIABLE( eyErrorVec );   
   }
   
 } // namespace xAOD

@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_JEMHITS_V1_H
 #define XAODTRIGL1CALO_VERSIONS_JEMHITS_V1_H
 
@@ -6,37 +8,50 @@
 
 namespace xAOD {
 
-   /// Description of a JEMHits
-   ///
-   /// This is a first stab at how a JEMHits could behave in the
-   /// xAOD EDM. Just brainstorming for now.
-   ///
-   /// @author John Morris <john.morris@cern.ch>
-   ///
-   /// $Date: 2013-12-03 
-   ///
-   class JEMHits_v1 : public SG::AuxElement{
-   public:
-     // Default constructor
-     JEMHits_v1();
-          
-     int crate() const;
-     void setCrate(int);
-     
-     int module() const;
-     void setModule(int);
+  /// Description of JEMHits_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
 
-     int peak() const;
-     void setPeak(int);     
-     
-     const std::vector<unsigned int>& jetHitsVec() const;     
-     void setJetHitsVec(const std::vector<unsigned int>&);
-     // backwards compatability with TrigT1CaloEvent
-     inline void addJetHits(const std::vector<unsigned int>&  hits) {this->setJetHitsVec(hits);}
-     
-     unsigned int forward() const;
-     unsigned int JetHits() const;
-   };
+  class JEMHits_v1 : public SG::AuxElement{
+    public:
+      // Default constructor
+      JEMHits_v1();
+      
+      /// get crate number
+      int crate() const;
+      /// set crate number
+      void setCrate(int);
+      
+      /// get module
+      int module() const;
+      /// set module
+      void setModule(int);      
+      
+      /// get peak
+      int peak() const;
+      /// set peak
+      void setPeak(int);       
+             
+      /// get jetHitsVec - jetHits for all time slices
+      const std::vector<unsigned int>& jetHitsVec() const; 
+      /// set jetHitsVec - jetHits for all time slices
+      void setJetHitsVec(const std::vector<unsigned int>&);
+      
+      /// Is this JEMEtSums forward?
+      unsigned int forward() const;
+
+      /// get jetHits for jetHitsVec[peak] - time slice that (hopefully) contains the collision
+      unsigned int jetHits() const;
+      
+      /// Backwards Compatibility with Trigger/TrigT1/TrigT1CaloEvent
+      /// Run1 EDM did not strictly follow camelCaseNotation 
+      /// See above for description
+      inline void addJetHits(const std::vector<unsigned int>&  hits) {this->setJetHitsVec(hits);}
+      inline unsigned int JetHits() const {return this->jetHits();}
+  };
 } // namespace xAOD
 
 // Set up a CLID for the class:
@@ -44,5 +59,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::JEMHits_v1 , 106316946 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_JEMHITS_V1_H

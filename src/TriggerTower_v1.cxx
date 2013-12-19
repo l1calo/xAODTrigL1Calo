@@ -69,13 +69,13 @@ namespace xAOD{
   /// Final EM energy value used by the algorithms
   int TriggerTower_v1::emEnergy() const
   {
-    return this->emLUT().at( this->emPeak() );
+    return this->emLUT()[ this->emPeak() ];
   }
   
   /// Final HAD energy value used by the algorithms
   int TriggerTower_v1::hadEnergy() const
   {
-    return this->hadLUT().at( this->hadPeak() );
+    return this->hadLUT()[ this->hadPeak() ];
   }
   
   /// get EM BCID at peak
@@ -84,9 +84,9 @@ namespace xAOD{
     // Fix for misfilled MC TriggerTowers
     if( ( this->emBCIDvec().size() != this->emLUT().size() ) &&
         ( this->emBCIDvec().size() == this->emADC().size() ) ){      
-            return this->emBCIDvec().at( this->emADCPeak() );
+            return this->emBCIDvec()[ this->emADCPeak() ];
     }
-    return this->emBCIDvec().at( this->emPeak() );
+    return this->emBCIDvec()[ this->emPeak() ];
   }
   
   /// get HAD BCID at peak
@@ -95,9 +95,9 @@ namespace xAOD{
     // Fix for misfilled MC TriggerTowers
     if( ( this->hadBCIDvec().size() != this->hadLUT().size() ) &&
         ( this->hadBCIDvec().size() == this->hadADC().size() ) ){      
-            return this->hadBCIDvec().at( this->hadADCPeak() );
+            return this->hadBCIDvec()[ this->hadADCPeak() ];
     }
-    return this->hadBCIDvec().at( this->hadPeak() );    
+    return this->hadBCIDvec()[ this->hadPeak() ];    
   }
   
   /// Is EM saturated?

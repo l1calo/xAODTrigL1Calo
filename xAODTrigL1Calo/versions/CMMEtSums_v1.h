@@ -7,17 +7,14 @@
 #include "AthContainers/AuxElement.h"
 
 namespace xAOD {
-
-  /// Description of a CMMEtSums
-  ///
-  /// This is a first stab at how a CMMEtSums could behave in the
-  /// xAOD EDM. Just brainstorming for now.
+  
+  /// Description of CMMEtSums_v1
   ///
   /// @author John Morris <john.morris@cern.ch>
   ///
   /// $Revision$
   /// $Date$  
-  ///
+
   class CMMEtSums_v1 : public SG::AuxElement{
     public:
       // Default constructor
@@ -37,59 +34,62 @@ namespace xAOD {
       int peak() const;
       /// set peak
       void setPeak(int);
+      
+      /// Please note that in the context of CMMEtSums, et is total energy, not transverse energy
+      /// For transverse energy, please use Pythagoras' theorem on ex and ey      
 
-      /// get EtVec - Et for all time slices
+      /// get etVec - et for all time slices
       const std::vector<unsigned int>& etVec() const;
-      /// set EtVec  - Et for all time slices
+      /// set etVec  - et for all time slices
       void setEtVec(const std::vector<unsigned int>&);
 
-      /// get ExVec - Ex for all time slices
+      /// get exVec - ex for all time slices
       const std::vector<unsigned int>& exVec() const;
-      /// set ExVec - Ex for all time slices
+      /// set exVec - ex for all time slices
       void setExVec(const std::vector<unsigned int>&);
 
-      /// get EyVec - Ey for all time slices      
+      /// get eyVec - ey for all time slices      
       const std::vector<unsigned int>& eyVec() const;
-      /// set EyVec - Ey for all time slices      
+      /// set eyVec - ey for all time slices      
       void setEyVec(const std::vector<unsigned int>&);      
 
-      /// get EtErrorVec - Et Error for all time slices
+      /// get etErrorVec - et Error for all time slices
       const std::vector<int>& etErrorVec() const;
-      /// set EtErrorVec - Et Error for all time slices
+      /// set etErrorVec - et Error for all time slices
       void setEtErrorVec(const std::vector<int>&);
 
-      /// get ExErrorVec - Ex Error for all time slices
+      /// get exErrorVec - ex Error for all time slices
       const std::vector<int>& exErrorVec() const;
-      /// set ExErrorVec - Ex Error for all time slices
+      /// set exErrorVec - ex Error for all time slices
       void setExErrorVec(const std::vector<int>&);
 
-      /// get EyErrorVec - Ey Error for all time slices
+      /// get eyErrorVec - ey Error for all time slices
       const std::vector<int>& eyErrorVec() const;
-      /// set EyErrorVec - Ey Error for all time slices
+      /// set eyErrorVec - ey Error for all time slices
       void setEyErrorVec(const std::vector<int>&);  
 
-      // add Et. Internally calls setEtVec(Et); setEtErrorVec(EtError);
+      // add et. Internally calls setEtVec(Et); setEtErrorVec(EtError);
       void addEt(const std::vector<unsigned int>& Et,const std::vector<int>& EtError);
-      // add Ex. Internally calls setExVec(Ex); setExErrorVec(ExError);
+      // add ex. Internally calls setExVec(Ex); setExErrorVec(ExError);
       void addEx(const std::vector<unsigned int>& Ex,const std::vector<int>& ExError);
-      // add Ey. Internally calls setEyVec(Ey); setEyErrorVec(EyError);
+      // add ey. Internally calls setEyVec(Ey); setEyErrorVec(EyError);
       void addEy(const std::vector<unsigned int>& Ey,const std::vector<int>& EyError);
 
-      // get Et for EtVec[peak] - time slice that (hopefully) contains the collision
+      // get et for etVec[peak] - time slice that (hopefully) contains the collision
       unsigned int et() const;
-      // get Ex for ExVec[peak] - time slice that (hopefully) contains the collision
+      // get ex for exVec[peak] - time slice that (hopefully) contains the collision
       unsigned int ex() const;
-      // get Ey for EyVec[peak] - time slice that (hopefully) contains the collision
+      // get ey for eyVec[peak] - time slice that (hopefully) contains the collision
       unsigned int ey() const;
-      // get EtError for EtErrorVec[peak] - time slice that (hopefully) contains the collision
+      // get etError for etErrorVec[peak] - time slice that (hopefully) contains the collision
       int etError() const;
-      // get ExError for ExErrorVec[peak] - time slice that (hopefully) contains the collision
+      // get exError for exErrorVec[peak] - time slice that (hopefully) contains the collision
       int exError() const;
-      // get EyError for EyErrorVec[peak] - time slice that (hopefully) contains the collision
+      // get eyError for eyErrorVec[peak] - time slice that (hopefully) contains the collision
       int eyError() const; 
 
       /// Backwards Compatibility with Trigger/TrigT1/TrigT1CaloEvent
-      /// Run1 EDM did not strictly follow cammelCaps
+      /// Run1 EDM did not strictly follow camelCaseNotation
       /// See above for description
       inline const std::vector<unsigned int>& EtVec() const {return this->etVec();}
       inline const std::vector<unsigned int>& ExVec() const {return this->exVec();}
@@ -112,5 +112,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::CMMEtSums_v1 , 19676884 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CMMEtSums_V1_H

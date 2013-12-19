@@ -1,3 +1,5 @@
+// $Id$
+
 // System include(s):
 #include <cmath>
 
@@ -42,16 +44,16 @@ namespace xAOD{
   /** Return ET for peak slice */   
   int JetElement_v1::emEnergy()  const
   {
-    if( this->emEnergyVec().at( this->peak() ) < m_layerSaturationThreshold) {
-      return this->emEnergyVec().at( this->peak() );
+    if( this->emEnergyVec()[ this->peak() ] < m_layerSaturationThreshold) {
+      return this->emEnergyVec()[ this->peak() ];
     }
     return m_layerSaturationThreshold;    
   }
   
   int JetElement_v1::hadEnergy() const
   {
-    if( this->hadEnergyVec().at( this->peak() ) < m_layerSaturationThreshold) {
-      return this->hadEnergyVec().at( this->peak() );
+    if( this->hadEnergyVec()[ this->peak() ] < m_layerSaturationThreshold) {
+      return this->hadEnergyVec()[ this->peak() ];
     }
     return m_layerSaturationThreshold;      
   }
@@ -71,8 +73,8 @@ namespace xAOD{
   int JetElement_v1::emSliceEnergy(int slice) const
   {
     if( slice >= 0 && slice < (int)this->emEnergyVec().size() ) {
-      if( this->emEnergyVec().at(slice) < m_layerSaturationThreshold ) {
-        return this->emEnergyVec().at(slice);
+      if( this->emEnergyVec()[ slice ] < m_layerSaturationThreshold ) {
+        return this->emEnergyVec()[ slice ];
       }
       return m_layerSaturationThreshold;
     }
@@ -82,8 +84,8 @@ namespace xAOD{
   int JetElement_v1::hadSliceEnergy(int slice) const
   {
     if( slice >= 0 && slice < (int)this->hadEnergyVec().size() ) {
-      if( this->hadEnergyVec().at(slice) < m_layerSaturationThreshold ) {
-        return this->hadEnergyVec().at(slice);
+      if( this->hadEnergyVec()[ slice ] < m_layerSaturationThreshold ) {
+        return this->hadEnergyVec()[ slice ];
       }
       return m_layerSaturationThreshold;
     }
@@ -128,17 +130,17 @@ namespace xAOD{
   
   int JetElement_v1::emError()   const
   {
-    return this->emErrorVec().at( this->peak() );
+    return this->emErrorVec()[ this->peak() ];
   }
   
   int JetElement_v1::hadError()  const
   {
-    return this->hadErrorVec().at( this->peak() );
+    return this->hadErrorVec()[ this->peak() ];
   }
   
   int JetElement_v1::linkError() const
   {
-    return this->linkErrorVec().at( this->peak() );
+    return this->linkErrorVec()[ this->peak() ];
   }
   
 } // namespace xAOD

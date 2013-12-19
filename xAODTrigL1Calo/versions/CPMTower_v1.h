@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CPMTOWER_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CPMTOWER_V1_H
 
@@ -6,63 +8,73 @@
 
 namespace xAOD {
 
-   /// Description of a CPMTower
-   ///
-   /// This is a first stab at how a CPMTower could behave in the
-   /// xAOD EDM. Just brainstorming for now.
-   ///
-   /// @author John Morris <john.morris@cern.ch>
-   ///
-   /// $Date: 2013-12-09
-   ///
-   class CPMTower_v1 : public SG::AuxElement{
-   public:
-    // Default constructor
-    CPMTower_v1();
-    
-    const std::vector<int>& em_energy() const;
-    void setEm_energy(const std::vector<int>&);
-    
-    const std::vector<int>& had_energy() const;
-    void setHad_energy(const std::vector<int>&);  
-    
-    const std::vector<int>& em_error() const;
-    void setEm_error(const std::vector<int>&);
-    
-    const std::vector<int>& had_error() const;
-    void setHad_error(const std::vector<int>&);      
-        
-    float eta() const;
-    void setEta(float);
-    
-    float phi() const;
-    void setPhi(float);
-
-    int peak() const;
-    void setPeak(int);     
-     
-           
-    /** return the final ET values using the in algorithms */
-    int emEnergy() const;
-    int hadEnergy() const;
-
-    /** return the ET values for a specified slice */
-    int emSliceEnergy(int slice) const;
-    int hadSliceEnergy(int slice) const;
-
-    /** return references to the vectors containing the ET values. */
-    const std::vector<int> emEnergyVec() const;
-    const std::vector<int> hadEnergyVec() const;
+  /// Description of CPMTower_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
+  
+  class CPMTower_v1 : public SG::AuxElement{
+    public:
+      // Default constructor
+      CPMTower_v1();
+      
+      /// get emEnergyVec - emEnergy for all time slices
+      const std::vector<int>& emEnergyVec() const;
+      /// set emEnergyVec - emEnergy for all time slices
+      void setEmEnergyVec(const std::vector<int>&);
+      
+      /// get hadEnergyVec - hadEnergy for all time slices
+      const std::vector<int>& hadEnergyVec() const;
+      /// set hadEnergyVec - hadEnergy for all time slices
+      void setHadEnergyVec(const std::vector<int>&);  
+      
+      /// get emErrorVec - emError for all time slices
+      const std::vector<int>& emErrorVec() const;
+      /// set emErrorVec - emError for all time slices
+      void setEmErrorVec(const std::vector<int>&);
+      
+      /// get hadErrorVec - hadError for all time slices
+      const std::vector<int>& hadErrorVec() const;
+      /// set hadErrorVec - hadError for all time slices
+      void setHadErrorVec(const std::vector<int>&);      
           
-    /** Utilities to report on status of tower */   
-    int emError() const;
-    int hadError() const;
-    int emSliceError(int slice) const;
-    int hadSliceError(int slice) const;
-    const std::vector<int> emErrorVec() const;
-    const std::vector<int> hadErrorVec() const;     
+      /// get eta
+      float eta() const;
+      /// set eta
+      void setEta(float);
+      
+      /// get phi (note that for L1Calo phi runs from 0 to 2pi)
+      float phi() const;
+      /// set phi
+      void setPhi(float);
 
-   };
+      int peak() const;
+      void setPeak(int);     
+        
+              
+      /// get emEnergy for emEnergyVec[peak]  - time slice that (hopefully) contains the collision
+      int emEnergy() const;
+      /// get hadEnergy for hadEnergyVec[peak]  - time slice that (hopefully) contains the collision      
+      int hadEnergy() const;
+
+      /// get emEnergy for emEnergyVec[slice] - time slice for arbitary slice
+      int emSliceEnergy(int slice) const;
+      /// get hadEnergy for hadEnergyVec[slice] - time slice for arbitary slice
+      int hadSliceEnergy(int slice) const;
+
+      // get emError for emErrorVec[peak]  - time slice that (hopefully) contains the collision
+      int emError() const;
+      // get hadError for hadErrorVec[peak]  - time slice that (hopefully) contains the collision
+      int hadError() const;
+      
+      /// get emError for emErrorVec[slice] - time slice for arbitary slice
+      int emSliceError(int slice) const;
+      /// get hadError for hadErrorVec[slice] - time slice for arbitary slice
+      int hadSliceError(int slice) const;
+
+  };
 } // namespace xAOD
 
 // Set up a CLID for the class:
@@ -70,5 +82,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::CPMTower_v1 , 14223686 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CPMTOWER_V1_H

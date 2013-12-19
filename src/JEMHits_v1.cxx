@@ -1,3 +1,5 @@
+// $Id$
+
 // System include(s):
 #include <cmath>
 
@@ -29,9 +31,9 @@ namespace xAOD{
     return result;
   }
   
-  unsigned int JEMHits_v1::JetHits() const
+  unsigned int JEMHits_v1::jetHits() const
   {
-    return this->jetHitsVec().at( this->peak() );
+    return this->jetHitsVec()[ this->peak() ];
   }
-  
+    
 } // namespace xAOD
