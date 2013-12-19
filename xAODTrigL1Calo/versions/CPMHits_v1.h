@@ -29,11 +29,11 @@ namespace xAOD {
      int peak() const;
      void setPeak(int);     
      
-     std::vector<unsigned int> hitsVec0() const;     
-     void setHitsVec0(std::vector<unsigned int>);
+     const std::vector<unsigned int>& hitsVec0() const;     
+     void setHitsVec0(const std::vector<unsigned int>&);
      
-     std::vector<unsigned int> hitsVec1() const;     
-     void setHitsVec1(std::vector<unsigned int>);     
+     const std::vector<unsigned int>& hitsVec1() const;     
+     void setHitsVec1(const std::vector<unsigned int>&);     
      
      // backwards compatability with TrigT1CaloEvent
      void addHits(const std::vector<unsigned int>&  hits0,const std::vector<unsigned int>&  hits1);

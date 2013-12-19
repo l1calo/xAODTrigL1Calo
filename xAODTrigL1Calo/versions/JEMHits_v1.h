@@ -29,8 +29,8 @@ namespace xAOD {
      int peak() const;
      void setPeak(int);     
      
-     std::vector<unsigned int> jetHitsVec() const;     
-     void setJetHitsVec(std::vector<unsigned int>);
+     const std::vector<unsigned int>& jetHitsVec() const;     
+     void setJetHitsVec(const std::vector<unsigned int>&);
      // backwards compatability with TrigT1CaloEvent
      inline void addJetHits(const std::vector<unsigned int>&  hits) {this->setJetHitsVec(hits);}
      

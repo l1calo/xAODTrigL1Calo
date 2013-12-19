@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CPMHITSCONTAINER_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CPMHITSCONTAINER_V1_H
 
@@ -17,5 +19,5 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::CPMHitsContainer_v1 , 1211912814 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CPMHITSCONTAINER_V1_H
+  

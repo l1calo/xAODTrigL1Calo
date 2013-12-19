@@ -90,6 +90,13 @@
          id="AA0924D2-23E2-47B3-8C7D-9D3B104B8990" />
   <class name="xAOD::RODHeaderAuxContainer_v1"
          id="6524E46D-CC9C-43D2-BAE0-55310A6B316C" />  
+  
+  <!--   TriggerTower -->
+  <class name="xAOD::TriggerTower_v1" />
+  <class name="xAOD::TriggerTowerContainer_v1"
+         id="DE2A7891-B5FE-4811-8178-EF106743312C" />
+  <class name="xAOD::TriggerTowerAuxContainer_v1"
+         id="3C5D20CF-6F77-4E67-B182-674EDFD2FE38" />  
 
 </lcgdict>
 

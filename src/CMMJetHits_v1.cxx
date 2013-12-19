@@ -8,16 +8,17 @@
 #include "xAODTrigL1Calo/versions/CMMJetHits_v1.h"
 
 namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMJetHits_v1 , int , crate , setCrate )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMJetHits_v1 , int , dataID , setDataID )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMJetHits_v1 , int , peak , setPeak )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMJetHits_v1 , std::vector<unsigned int> , hitsVec , setHitsVec )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMJetHits_v1 , std::vector<int> , errorVec , setErrorVec )  
   
   CMMJetHits_v1::CMMJetHits_v1() :
     SG::AuxElement()
   {        
   }
+  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMJetHits_v1 , int , crate , setCrate )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMJetHits_v1 , int , dataID , setDataID )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMJetHits_v1 , int , peak , setPeak )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMJetHits_v1 , std::vector<unsigned int> , hitsVec , setHitsVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMJetHits_v1 , std::vector<int> , errorVec , setErrorVec )  
   
   void CMMJetHits_v1::addHits(const std::vector<unsigned int>& hits,const std::vector<int>& error)
   {

@@ -8,15 +8,16 @@
 #include "xAODTrigL1Calo/versions/JEMHits_v1.h"
 
 namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JEMHits_v1 , int , crate , setCrate )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JEMHits_v1 , int , module , setModule )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JEMHits_v1 , int , peak , setPeak )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JEMHits_v1 , std::vector<unsigned int> , jetHitsVec , setJetHitsVec )  
-    
+  
   JEMHits_v1::JEMHits_v1() :
     SG::AuxElement()
   {        
   }
+  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JEMHits_v1 , int , crate , setCrate )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JEMHits_v1 , int , module , setModule )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JEMHits_v1 , int , peak , setPeak )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( JEMHits_v1 , std::vector<unsigned int> , jetHitsVec , setJetHitsVec )  
     
   unsigned int JEMHits_v1::forward() const
   {

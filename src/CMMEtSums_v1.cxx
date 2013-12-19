@@ -7,22 +7,23 @@
 // Local include(s):
 #include "xAODTrigL1Calo/versions/CMMEtSums_v1.h"
 
-namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , crate , setCrate )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , dataID , setDataID )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , peak , setPeak )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , EtVec , setEtVec )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , ExVec , setExVec )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , EyVec , setEyVec )    
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , EtErrorVec , setEtErrorVec )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , ExErrorVec , setExErrorVec )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , EyErrorVec , setEyErrorVec )    
+namespace xAOD{ 
   
   CMMEtSums_v1::CMMEtSums_v1() :
     SG::AuxElement()
   {        
-  }
+  }  
   
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , crate , setCrate )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , dataID , setDataID )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMEtSums_v1 , int , peak , setPeak )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , EtVec , setEtVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , ExVec , setExVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<unsigned int> , EyVec , setEyVec )    
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , EtErrorVec , setEtErrorVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , ExErrorVec , setExErrorVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMEtSums_v1 , std::vector<int> , EyErrorVec , setEyErrorVec )    
+    
   void CMMEtSums_v1::addEt(const std::vector<unsigned int>& Et,const std::vector<int>& EtError)
   {
     this->setEtVec( Et );

@@ -17,7 +17,7 @@ namespace xAOD{
   ///
   /// $Revision$
   /// $Date$
-  ///
+
   class CMMCPHitsAuxContainer_v1 : public AuxContainerBase {
   public:
     // Default constructor
@@ -32,8 +32,7 @@ namespace xAOD{
     std::vector<std::vector<int> > errorVec0;
     std::vector<std::vector<int> > errorVec1; 
     
-  }; // class CMMCPHitsAuxContainer_v1
-  
+  }; // class CMMCPHitsAuxContainer_v1  
 } // namespace xAOD
 
 // Set up a CLID and StoreGate inheritance for the class:
@@ -44,5 +43,4 @@ namespace xAOD{
 #include "SGTools/BaseInfo.h"
   SG_BASE( xAOD::CMMCPHitsAuxContainer_v1 , xAOD::AuxContainerBase );
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CMMCPHITSAUXCONTAINER_V1_H

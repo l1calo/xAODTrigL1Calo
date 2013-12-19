@@ -16,14 +16,10 @@ namespace xAOD{
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMCPHits_v1, int, crate, setCrate )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMCPHits_v1, int, dataID, setDataID )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CMMCPHits_v1, int, peak, setPeak )
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMCPHits_v1, std::vector<unsigned int>,
-                                     hitsVec0, setHitsVec0 )  
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMCPHits_v1, std::vector<unsigned int>,
-                                     hitsVec1, setHitsVec1 )  
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMCPHits_v1, std::vector<int>,
-                                     errorVec0, setErrorVec0 )  
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMCPHits_v1, std::vector<int>,
-                                     errorVec1, setErrorVec1 )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMCPHits_v1, std::vector<unsigned int>, hitsVec0, setHitsVec0 )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMCPHits_v1, std::vector<unsigned int>, hitsVec1, setHitsVec1 )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMCPHits_v1, std::vector<int>, errorVec0, setErrorVec0 )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CMMCPHits_v1, std::vector<int>, errorVec1, setErrorVec1 )
 
   void CMMCPHits_v1::addHits(const std::vector<unsigned int>& hits0,
                              const std::vector<unsigned int>& hits1,

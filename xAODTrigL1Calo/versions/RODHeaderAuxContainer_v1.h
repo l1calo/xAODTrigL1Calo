@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_RODHEADERAUXCONTAINER_V1_H
 #define XAODTRIGL1CALO_VERSIONS_RODHEADERAUXCONTAINER_V1_H
 
@@ -7,8 +9,14 @@
 // EDM include(s):
 #include "xAODCore/AuxContainerBase.h"
 
-
 namespace xAOD{
+  
+  /// AuxContainer for RODHeader_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$    
 
   class RODHeaderAuxContainer_v1 : public AuxContainerBase {
   public:
@@ -26,8 +34,7 @@ namespace xAOD{
     std::vector<std::vector<uint32_t> > statusWords;
     std::vector<uint32_t> payloadSize;
     
-  }; // class RODHeaderAuxContainer_v1
-  
+  }; // class RODHeaderAuxContainer_v1 
 } // namespace xAOD
 
 // Set up a CLID and StoreGate inheritance for the class:
@@ -38,5 +45,4 @@ namespace xAOD{
 #include "SGTools/BaseInfo.h"
   SG_BASE( xAOD::RODHeaderAuxContainer_v1 , xAOD::AuxContainerBase );
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_RODHEADERAUXCONTAINER_V1_H

@@ -20,32 +20,32 @@ namespace xAOD {
       // Default constructor
       RODHeader_v1();
 
-      uint32_t version() const;
-      void setVersion(uint32_t);
+      unsigned int version() const;
+      void setVersion(unsigned int);
 
-      uint32_t sourceId() const;
-      void setSourceId(uint32_t);
+      unsigned int sourceId() const;
+      void setSourceId(unsigned int);
 
-      uint32_t run() const;
-      void setRun(uint32_t);
+      unsigned int run() const;
+      void setRun(unsigned int);
 
-      uint32_t lvl1Id() const;
-      void setLvl1Id(uint32_t);
+      unsigned int lvl1Id() const;
+      void setLvl1Id(unsigned int);
      
-      uint32_t bcid() const;
-      void setBcid(uint32_t);
+      unsigned int bcid() const;
+      void setBcid(unsigned int);
       
-      uint32_t trigType() const;
-      void setTrigType(uint32_t);
+      unsigned int trigType() const;
+      void setTrigType(unsigned int);
 
-      uint32_t detType() const;
-      void setDetType(uint32_t);
+      unsigned int detType() const;
+      void setDetType(unsigned int);
       
-      std::vector<uint32_t> statusWords() const;
-      void setStatusWords(std::vector<uint32_t>);
+      const std::vector<unsigned int>& statusWords() const;
+      void setStatusWords(const std::vector<unsigned int>&);
 
-      uint32_t payloadSize() const;
-      void setPayloadSize(uint32_t);
+      unsigned int payloadSize() const;
+      void setPayloadSize(unsigned int);
       
       // Header data
       int majorVersion()  const;

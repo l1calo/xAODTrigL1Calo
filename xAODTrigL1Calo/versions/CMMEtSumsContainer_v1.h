@@ -19,5 +19,5 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::CMMEtSumsContainer_v1 , 1175845346 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CMMETSUMSCONTAINER_V1_H
+  

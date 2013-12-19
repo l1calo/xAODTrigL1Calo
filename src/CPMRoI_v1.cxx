@@ -8,12 +8,13 @@
 #include "xAODTrigL1Calo/versions/CPMRoI_v1.h"
 
 namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMRoI_v1 ,  uint32_t , roiWord , setRoiWord ) 
   
   CPMRoI_v1::CPMRoI_v1() :
     SG::AuxElement()
   {        
   }
+  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMRoI_v1 ,  uint32_t , roiWord , setRoiWord )   
   
   /// Return crate number (0-1)
   int CPMRoI_v1::crate() const

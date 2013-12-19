@@ -29,14 +29,14 @@ namespace xAOD {
      int peak() const;
      void setPeak(int); 
 
-     std::vector<unsigned int> etVec() const;     
-     void setEtVec(std::vector<unsigned int>);      
+     const std::vector<unsigned int>& etVec() const;     
+     void setEtVec(const std::vector<unsigned int>&);      
           
-     std::vector<unsigned int> exVec() const;     
-     void setExVec(std::vector<unsigned int>); 
+     const std::vector<unsigned int>& exVec() const;     
+     void setExVec(const std::vector<unsigned int>&); 
      
-     std::vector<unsigned int> eyVec() const;     
-     void setEyVec(std::vector<unsigned int>);  
+     const std::vector<unsigned int>& eyVec() const;     
+     void setEyVec(const std::vector<unsigned int>&);  
      
      unsigned int forward() const;
      unsigned int Et() const;

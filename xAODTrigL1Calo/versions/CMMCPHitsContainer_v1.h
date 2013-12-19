@@ -19,5 +19,4 @@ namespace xAOD {
 #include "SGTools/CLASS_DEF.h"
   CLASS_DEF( xAOD::CMMCPHitsContainer_v1 , 1296557234 , 1 )
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CMMCPHITSCONTAINER_V1_H

@@ -20,17 +20,17 @@ namespace xAOD {
     // Default constructor
     CPMTower_v1();
     
-    std::vector<int> em_energy() const;
-    void setEm_energy(std::vector<int>);
+    const std::vector<int>& em_energy() const;
+    void setEm_energy(const std::vector<int>&);
     
-    std::vector<int> had_energy() const;
-    void setHad_energy(std::vector<int>);  
+    const std::vector<int>& had_energy() const;
+    void setHad_energy(const std::vector<int>&);  
     
-    std::vector<int> em_error() const;
-    void setEm_error(std::vector<int>);
+    const std::vector<int>& em_error() const;
+    void setEm_error(const std::vector<int>&);
     
-    std::vector<int> had_error() const;
-    void setHad_error(std::vector<int>);      
+    const std::vector<int>& had_error() const;
+    void setHad_error(const std::vector<int>&);      
         
     float eta() const;
     void setEta(float);

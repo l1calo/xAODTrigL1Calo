@@ -29,11 +29,11 @@ namespace xAOD {
      int peak() const;
      void setPeak(int);
      
-     std::vector<unsigned int> hitsVec() const;
-     void setHitsVec(std::vector<unsigned int>);
+     const std::vector<unsigned int>& hitsVec() const;
+     void setHitsVec(const std::vector<unsigned int>&);
          
-     std::vector<int> errorVec() const;
-     void setErrorVec(std::vector<int>);
+     const std::vector<int>& errorVec() const;
+     void setErrorVec(const std::vector<int>&);
            
      
      void addHits(const std::vector<unsigned int>& hits,const std::vector<int>& error);     

@@ -7,28 +7,29 @@
 // Local include(s):
 #include "xAODTrigL1Calo/versions/JetElement_v1.h"
 
-namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , float , phi , setPhi )
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , float , eta , setEta )
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , unsigned int , key , setKey )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , int , peak , setPeak )
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , emEnergyVec , setEmEnergyVec )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , hadEnergyVec , setHadEnergyVec )
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , emErrorVec , setEmErrorVec )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , hadErrorVec , setHadErrorVec )
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , linkErrorVec , setLinkErrorVec )    
+namespace xAOD{ 
   
   JetElement_v1::JetElement_v1() :
     SG::AuxElement()
   {        
   }
   
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , float , phi , setPhi )
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , float , eta , setEta )
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , unsigned int , key , setKey )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( JetElement_v1 , int , peak , setPeak )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , emEnergyVec , setEmEnergyVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , hadEnergyVec , setHadEnergyVec )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , emErrorVec , setEmErrorVec )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , hadErrorVec , setHadErrorVec )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( JetElement_v1 , std::vector<int> , linkErrorVec , setLinkErrorVec )    
+ 
   /** Add ET to triggered time slice */
   /** this will add energy to the JE. It's really intended for
      JetElementMaker to use when creating JEs. */
   void JetElement_v1::addEnergy(int emEnergy, int hadEnergy)
   {
-
+    
   }
   
   /* Add ET values to specified slice */

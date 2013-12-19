@@ -32,20 +32,20 @@ namespace xAOD {
       int peak() const;
       void setPeak(int);
       
-      std::vector<int> emEnergyVec() const;
-      void setEmEnergyVec(std::vector<int>);
+      const std::vector<int>& emEnergyVec() const;
+      void setEmEnergyVec(const std::vector<int>&);
       
-      std::vector<int> hadEnergyVec() const;
-      void setHadEnergyVec(std::vector<int>); 
+      const std::vector<int>& hadEnergyVec() const;
+      void setHadEnergyVec(const std::vector<int>&); 
       
-      std::vector<int> emErrorVec() const;
-      void setEmErrorVec(std::vector<int>);
+      const std::vector<int>& emErrorVec() const;
+      void setEmErrorVec(const std::vector<int>&);
       
-      std::vector<int> hadErrorVec() const;
-      void setHadErrorVec(std::vector<int>);      
+      const std::vector<int>& hadErrorVec() const;
+      void setHadErrorVec(const std::vector<int>&);      
     
-      std::vector<int> linkErrorVec() const;
-      void setLinkErrorVec(std::vector<int>); 
+      const std::vector<int>& linkErrorVec() const;
+      void setLinkErrorVec(const std::vector<int>&); 
      
       /** Add ET to triggered time slice */
       void addEnergy(int emEnergy, int hadEnergy);

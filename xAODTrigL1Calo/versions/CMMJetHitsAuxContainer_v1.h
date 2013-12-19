@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CMMJETHITSAUXCONTAINER_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CMMJETHITSAUXCONTAINER_V1_H
 
@@ -7,8 +9,14 @@
 // EDM include(s):
 #include "xAODCore/AuxContainerBase.h"
 
-
 namespace xAOD{
+  
+  /// AuxContainer for CMMJetHits_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
 
   class CMMJetHitsAuxContainer_v1 : public AuxContainerBase {
   public:
@@ -21,10 +29,8 @@ namespace xAOD{
     std::vector<int> peak;
     std::vector<std::vector<unsigned int> > hitsVec;
     std::vector<std::vector<int> > errorVec;
-
     
-  }; // class CMMCPHitsAuxContainer_v1
-  
+  }; // class CMMCPHitsAuxContainer_v1 
 } // namespace xAOD
 
 // Set up a CLID and StoreGate inheritance for the class:
@@ -35,5 +41,4 @@ namespace xAOD{
 #include "SGTools/BaseInfo.h"
   SG_BASE( xAOD::CMMJetHitsAuxContainer_v1 , xAOD::AuxContainerBase );
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CMMJETHITSAUXCONTAINER_V1_H

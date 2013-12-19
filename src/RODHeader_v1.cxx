@@ -8,21 +8,21 @@
 #include "xAODTrigL1Calo/versions/RODHeader_v1.h"
 
 namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , uint32_t , version , setVersion )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , uint32_t , sourceId , setSourceId )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , uint32_t , run , setRun )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , uint32_t , lvl1Id , setLvl1Id )    
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , uint32_t , bcid , setBcid )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , uint32_t , trigType , setTrigType )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , uint32_t , detType , setDetType )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , std::vector<uint32_t> , statusWords , setStatusWords )    
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , uint32_t , payloadSize , setPayloadSize )  
- 
   
   RODHeader_v1::RODHeader_v1() :
     SG::AuxElement()
   {        
   }
+  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , unsigned int , version , setVersion )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , unsigned int , sourceId , setSourceId )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , unsigned int , run , setRun )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , unsigned int , lvl1Id , setLvl1Id )    
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , unsigned int , bcid , setBcid )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , unsigned int , trigType , setTrigType )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , unsigned int , detType , setDetType )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( RODHeader_v1 , std::vector<unsigned int> , statusWords , setStatusWords )    
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( RODHeader_v1 , unsigned int , payloadSize , setPayloadSize )  
   
   // Header data
   int RODHeader_v1::majorVersion()  const

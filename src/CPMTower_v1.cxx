@@ -8,20 +8,20 @@
 #include "xAODTrigL1Calo/versions/CPMTower_v1.h"
 
 namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , std::vector<int> , em_energy , setEm_energy )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , std::vector<int> , had_energy , setHad_energy )    
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , std::vector<int> , em_error , setEm_error )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , std::vector<int> , had_error , setHad_error )     
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , float , eta , setEta )   
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , float , phi , setPhi )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , int , peak , setPeak )  
-
   
   CPMTower_v1::CPMTower_v1() :
     SG::AuxElement()
   {        
   }
   
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CPMTower_v1 , std::vector<int> , em_energy , setEm_energy )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CPMTower_v1 , std::vector<int> , had_energy , setHad_energy )    
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CPMTower_v1 , std::vector<int> , em_error , setEm_error )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CPMTower_v1 , std::vector<int> , had_error , setHad_error )     
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , float , eta , setEta )   
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , float , phi , setPhi )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMTower_v1 , int , peak , setPeak )  
+ 
   /** return the final ET values using the in algorithms */
   int CPMTower_v1::emEnergy() const
   {

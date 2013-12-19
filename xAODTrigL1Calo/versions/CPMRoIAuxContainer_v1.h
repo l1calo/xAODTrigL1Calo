@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CPMROIAUXCONTAINER_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CPMROIAUXCONTAINER_V1_H
 
@@ -7,9 +9,15 @@
 // EDM include(s):
 #include "xAODCore/AuxContainerBase.h"
 
-
 namespace xAOD{
-
+  
+  /// AuxContainer for CPMRoI_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$  
+  
   class CPMRoIAuxContainer_v1 : public AuxContainerBase {
   public:
     // Default constructor
@@ -18,8 +26,7 @@ namespace xAOD{
   private:
     std::vector<uint32_t> roiWord;
     
-  }; // class CPMRoIAuxContainer_v1
-  
+  }; // class CPMRoIAuxContainer_v1 
 } // namespace xAOD
 
 // Set up a CLID and StoreGate inheritance for the class:
@@ -29,6 +36,5 @@ namespace xAOD{
       
 #include "SGTools/BaseInfo.h"
   SG_BASE( xAOD::CPMRoIAuxContainer_v1 , xAOD::AuxContainerBase );
-#endif // not XAOD_STANDALONE
-
+#endif // not XAOD_STANDALONE 
 #endif // XAODTRIGL1CALO_VERSIONS_CPMROIAUXCONTAINER_V1_H

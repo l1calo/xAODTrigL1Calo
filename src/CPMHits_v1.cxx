@@ -8,17 +8,18 @@
 #include "xAODTrigL1Calo/versions/CPMHits_v1.h"
 
 namespace xAOD{  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMHits_v1 , int , crate , setCrate )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMHits_v1 , int , module , setModule )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMHits_v1 , int , peak , setPeak )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMHits_v1 , std::vector<unsigned int> , hitsVec0 , setHitsVec0 )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMHits_v1 , std::vector<unsigned int> , hitsVec1 , setHitsVec1 )  
   
   CPMHits_v1::CPMHits_v1() :
     SG::AuxElement()
   {        
   }
-    
+       
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMHits_v1 , int , crate , setCrate )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMHits_v1 , int , module , setModule )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( CPMHits_v1 , int , peak , setPeak )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CPMHits_v1 , std::vector<unsigned int> , hitsVec0 , setHitsVec0 )  
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( CPMHits_v1 , std::vector<unsigned int> , hitsVec1 , setHitsVec1 )  
+  
   void CPMHits_v1::addHits(const std::vector<unsigned int>&  hits0,const std::vector<unsigned int>&  hits1)
   {
     this->setHitsVec0( hits0 );

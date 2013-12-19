@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_CMMROIAUXINFO_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CMMROIAUXINFO_V1_H
 
@@ -8,6 +10,13 @@
 #include "xAODCore/AuxInfoBase.h"
 
 namespace xAOD{
+  
+  /// AuxInfo for CMMRoI_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$    
 
   class CMMRoIAuxInfo_v1 : public AuxInfoBase {
   public:
@@ -20,8 +29,7 @@ namespace xAOD{
     uint32_t energyRoiWord1;
     uint32_t energyRoiWord2;    
     
-  }; // class CMMRoIAuxInfo_v1
-  
+  }; // class CMMRoIAuxInfo_v1  
 } // namespace xAOD
 
 // Set up a CLID and StoreGate inheritance for the class:
@@ -32,5 +40,4 @@ namespace xAOD{
 #include "SGTools/BaseInfo.h"
   SG_BASE( xAOD::CMMRoIAuxInfo_v1 , xAOD::AuxInfoBase );
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_CMMROIAUXINFO_V1_H

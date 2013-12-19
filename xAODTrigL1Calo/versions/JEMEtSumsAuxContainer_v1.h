@@ -1,3 +1,5 @@
+// Dear emacs, this is -*- c++ -*-
+// $Id$
 #ifndef XAODTRIGL1CALO_VERSIONS_JEMETSUMSAUXCONTAINER_V1_H
 #define XAODTRIGL1CALO_VERSIONS_JEMETSUMSAUXCONTAINER_V1_H
 
@@ -7,8 +9,14 @@
 // EDM include(s):
 #include "xAODCore/AuxContainerBase.h"
 
-
 namespace xAOD{
+  
+  /// AuxContainer for JEMEtSums_v1
+  ///
+  /// @author John Morris <john.morris@cern.ch>
+  ///
+  /// $Revision$
+  /// $Date$    
 
   class JEMEtSumsAuxContainer_v1 : public AuxContainerBase {
   public:
@@ -19,12 +27,11 @@ namespace xAOD{
     std::vector<int> crate;
     std::vector<int> module;
     std::vector<int> peak;
-    std::vector<std::vector<unsigned int> > EtVec;
-    std::vector<std::vector<unsigned int> > ExVec;
-    std::vector<std::vector<unsigned int> > EyVec;
+    std::vector<std::vector<unsigned int> > etVec;
+    std::vector<std::vector<unsigned int> > exVec;
+    std::vector<std::vector<unsigned int> > eyVec;
     
-  }; // class JEMEtSumsAuxContainer_v1
-  
+  }; // class JEMEtSumsAuxContainer_v1  
 } // namespace xAOD
 
 // Set up a CLID and StoreGate inheritance for the class:
@@ -35,5 +42,4 @@ namespace xAOD{
 #include "SGTools/BaseInfo.h"
   SG_BASE( xAOD::JEMEtSumsAuxContainer_v1 , xAOD::AuxContainerBase );
 #endif // not XAOD_STANDALONE
-
 #endif // XAODTRIGL1CALO_VERSIONS_JEMETSUMSAUXCONTAINER_V1_H

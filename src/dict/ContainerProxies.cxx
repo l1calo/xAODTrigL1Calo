@@ -16,6 +16,7 @@
 
 #include "xAODTrigL1Calo/versions/JetElementContainer_v1.h"
 #include "xAODTrigL1Calo/versions/RODHeaderContainer_v1.h"
+#include "xAODTrigL1Calo/versions/TriggerTowerContainer_v1.h"
 
 // Set up the collection proxies:
 ADD_NS_DV_PROXY( xAOD, JEMHitsContainer_v1 );
@@ -32,3 +33,4 @@ ADD_NS_DV_PROXY( xAOD, CMMJetHitsContainer_v1 );
 
 ADD_NS_DV_PROXY( xAOD, JetElementContainer_v1 );
 ADD_NS_DV_PROXY( xAOD, RODHeaderContainer_v1 );
+ADD_NS_DV_PROXY( xAOD, TriggerTowerContainer_v1 );
