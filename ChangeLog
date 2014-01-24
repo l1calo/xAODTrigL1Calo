@@ -1,3 +1,10 @@
+2014-01-24 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Migrated the package to use RootCore for the standalone
+	  compilation.
+	* Not runtime tests done, but things should be okay in principle
+	  after the update.
+	* Tagging as xAODTrigL1Calo-00-00-05
+
 2013-12-19 John Morris <john.morris@cern.ch>
 	* Tag as xAODTrigL1Calo-00-00-04
 	* Run1 EDM pretty much complete

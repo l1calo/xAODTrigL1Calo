@@ -13,7 +13,7 @@ use AthLinks      AthLinks-*	  Control
 # EDM package(s):
 use xAODCore      xAODCore-*      Event/xAOD
 
-library xAODTrigL1Calo *.cxx
+library xAODTrigL1Calo ../Root/*.cxx
 apply_pattern installed_library
 
 private
@@ -24,4 +24,4 @@ use AthLinks      AthLinks-*      Control
 
 apply_pattern lcgdict dict=xAODTrigL1Calo selectionfile=selection.xml \
 	              headerfiles="../xAODTrigL1Calo/xAODTrigL1CaloDict.h" \
-                      extralibfiles=dict/*.cxx
+                      extralibfiles=../Root/dict/*.cxx
