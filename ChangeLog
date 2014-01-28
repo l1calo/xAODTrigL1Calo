@@ -1,3 +1,9 @@
+2014-01-28 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Adding some explicit includes to the headers making
+	  use of uint32_t. Interestingly the absence of these includes
+	  only causes build failures on some platforms/setups.
+	* Tagging as xAODTrigL1Calo-00-00-06
+
 2014-01-24 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
 	* Migrated the package to use RootCore for the standalone
 	  compilation.

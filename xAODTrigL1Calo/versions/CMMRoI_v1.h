@@ -3,6 +3,10 @@
 #ifndef XAODTRIGL1CALO_VERSIONS_CMMROI_V1_H
 #define XAODTRIGL1CALO_VERSIONS_CMMROI_V1_H
 
+extern "C" {
+#   include <stdint.h>
+}
+
 #include "AthLinks/ElementLink.h"
 #include "AthContainers/AuxElement.h"
 

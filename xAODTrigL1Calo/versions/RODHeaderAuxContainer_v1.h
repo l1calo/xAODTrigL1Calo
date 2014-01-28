@@ -4,6 +4,9 @@
 #define XAODTRIGL1CALO_VERSIONS_RODHEADERAUXCONTAINER_V1_H
 
 // STL include(s):
+extern "C" {
+#   include <stdint.h>
+}
 #include <vector>
 
 // EDM include(s):
