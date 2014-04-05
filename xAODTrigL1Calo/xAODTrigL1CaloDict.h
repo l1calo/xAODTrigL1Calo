@@ -64,7 +64,7 @@
 #include "xAODTrigL1Calo/versions/TriggerTowerAuxContainer_v1.h"
 
 namespace {
-   struct GCCXML_DUMMY_INSTANTIATION {
+   struct GCCXML_DUMMY_INSTANTIATION_XAODTRIGL1CALO {
       
       // JEMHits    
       // Container(s):

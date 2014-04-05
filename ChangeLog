@@ -1,4 +1,13 @@
 2014-04-05 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Changed the name of GCCXML_DUMMY_INSTANTIATION to
+	  a more unique name in the dictionary header. Was necessary,
+	  as rootcling is complaining about seeing the same struct name
+	  in multiple libraries. (Which really shouldn't clash actually,
+	  but let's do this until ROOT 6 stops complaining about this.)
+	* Still not tagging, as the DataVector selection rule is still
+	  not applied correctly.
+
+2014-04-05 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
 	* Tried making rootcling take the DataVector selection rules
 	  into account, but for some reason I didn't manage. To be
 	  followed up with the ROOT developers...
