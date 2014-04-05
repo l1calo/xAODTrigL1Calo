@@ -63,7 +63,6 @@
 #include "xAODTrigL1Calo/versions/TriggerTowerContainer_v1.h"
 #include "xAODTrigL1Calo/versions/TriggerTowerAuxContainer_v1.h"
 
-#ifdef __GCCXML__
 namespace {
    struct GCCXML_DUMMY_INSTANTIATION {
       
@@ -192,5 +191,5 @@ namespace {
      
    };
 }
-#endif // __GCCXML__
+
 #endif // XAODTRIGL1CALO_XAODTRIGL1CALOCALOEVENTDICT_H

@@ -1,3 +1,9 @@
+2014-04-05 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Tried making rootcling take the DataVector selection rules
+	  into account, but for some reason I didn't manage. To be
+	  followed up with the ROOT developers...
+	* Not tagging for the moment.
+
 2014-01-28 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
 	* Adding some explicit includes to the headers making
 	  use of uint32_t. Interestingly the absence of these includes

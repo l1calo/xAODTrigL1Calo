@@ -98,5 +98,14 @@
   <class name="xAOD::TriggerTowerAuxContainer_v1"
          id="3C5D20CF-6F77-4E67-B182-674EDFD2FE38" />  
 
+  <!-- Suppress the unwanted classes found by ROOT 6. -->
+  <!-- Hopefully we can remove these extra lines at one point... -->
+  <exclusion>
+    <class name="SG::IConstAuxStore" />
+    <class name="DataLink<SG::IConstAuxStore>" />
+    <class pattern="DataModel_detail*" />
+    <class pattern="boost*" />
+  </exclusion>
+
 </lcgdict>
 
