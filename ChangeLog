@@ -1,3 +1,10 @@
+2014-04-08 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Could remove some of the exclusion rules after the recent
+	  bugfixes in rootcling, but not all of them.
+	* With the latest version of the ROOT master branch, the
+	  class names are now recognised correctly by rootcling.
+	* Tagging as xAODTrigL1Calo-00-00-07
+
 2014-04-05 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
 	* Changed the name of GCCXML_DUMMY_INSTANTIATION to
 	  a more unique name in the dictionary header. Was necessary,
