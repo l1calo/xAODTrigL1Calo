@@ -5,6 +5,7 @@
 
 // STL include(s):
 #include <vector>
+#include <cstdint>
 
 // EDM include(s):
 #include "xAODCore/AuxContainerBase.h"
@@ -27,26 +28,26 @@ namespace xAOD{
     
     // Tower identifiers
     std::vector<unsigned int> coolId;
-    std::vector<unsigned int> layer;
+    std::vector<uint_least8_t> layer;
     std::vector<float> eta;
     std::vector<float> phi;
 
     // Quantities with same number of slices as LUT data
-    std::vector<std::vector<unsigned int> > lut_cp;
-    std::vector<std::vector<unsigned int> > lut_jep;
-    std::vector<std::vector<unsigned int> > correction;
-    std::vector<std::vector<unsigned int> > bcidVec;
+    std::vector<std::vector<uint_least8_t> > lut_cp;
+    std::vector<std::vector<uint_least8_t> > lut_jep;
+    std::vector<std::vector<uint_least8_t> > correction;
+    std::vector<std::vector<uint_least8_t> > bcidVec;
 
     // Quantities with same number of slices as ADC data
-    std::vector<std::vector<unsigned int> > adc;
-    std::vector<std::vector<unsigned int> > bcidExt;
+    std::vector<std::vector<uint_least8_t> > adc;
+    std::vector<std::vector<uint_least8_t> > bcidExt;
 
     // One error word/tower/event
-    std::vector<unsigned int> error;
+    std::vector<uint_least8_t> error;
 
     // Not part of readout, but to extract "peak" slice from vectors
-    std::vector<unsigned int> peak;
-    std::vector<unsigned int> adcPeak;     
+    std::vector<uint_least8_t> peak;
+    std::vector<uint_least8_t> adcPeak;     
 
     
   }; // class TriggerTowerAuxContainer_v2 

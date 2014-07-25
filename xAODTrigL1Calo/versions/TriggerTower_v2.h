@@ -7,6 +7,8 @@
 #include "AthLinks/ElementLink.h"
 #include "AthContainers/AuxElement.h"
 
+#include <cstdint>
+
 namespace xAOD {
 
   /// Description of TriggerTower_v1
@@ -42,13 +44,13 @@ namespace xAOD {
       TriggerTower_v2();
       
       /// Fill tower with all information
-      void initialize(const unsigned int& coolId,const unsigned int& layer,const float& eta,const float& phi,
-                      const std::vector<unsigned int>& lut_cp,const std::vector<unsigned int>& lut_jep,
-                      const std::vector<unsigned int>& correction,const std::vector<unsigned int>& bcidVec,
-                      const std::vector<unsigned int>& adc,const std::vector<unsigned int>& bcidExt,
-                      const unsigned int& error,
-                      const unsigned int& peak,
-                      const unsigned int adcPeak);
+      void initialize(const unsigned int& coolId,const uint_least8_t& layer,const float& eta,const float& phi,
+                      const std::vector<uint_least8_t>& lut_cp,const std::vector<uint_least8_t>& lut_jep,
+                      const std::vector<uint_least8_t>& correction,const std::vector<uint_least8_t>& bcidVec,
+                      const std::vector<uint_least8_t>& adc,const std::vector<uint_least8_t>& bcidExt,
+                      const uint_least8_t& error,
+                      const uint_least8_t& peak,
+                      const uint_least8_t& adcPeak);
 
       // Tower identifiers
       
@@ -58,9 +60,9 @@ namespace xAOD {
       void setCoolId(unsigned int);
       
       /// get layer
-      unsigned int layer() const;
+      uint_least8_t layer() const;
       /// set layer
-      void setLayer(unsigned int);
+      void setLayer(uint_least8_t);
       
       
       /// get eta
@@ -77,64 +79,64 @@ namespace xAOD {
       // Quantities with same number of slices as LUT data
       
       /// get lut_cp
-      const std::vector<unsigned int>& lut_cp() const;
+      const std::vector<uint_least8_t>& lut_cp() const;
       /// set lut_cp
-      void setLut_cp(const std::vector<unsigned int>&);
+      void setLut_cp(const std::vector<uint_least8_t>&);
       
       /// get lut_jep
-      const std::vector<unsigned int>& lut_jep() const;
+      const std::vector<uint_least8_t>& lut_jep() const;
       /// set lut_jep
-      void setLut_jep(const std::vector<unsigned int>&);      
+      void setLut_jep(const std::vector<uint_least8_t>&);      
       
       /// get correction
-      const std::vector<unsigned int>& correction() const;
+      const std::vector<uint_least8_t>& correction() const;
       /// set correction
-      void setCorrection(const std::vector<unsigned int>&);  
+      void setCorrection(const std::vector<uint_least8_t>&);  
       
       /// get bcidVec
-      const std::vector<unsigned int>& bcidVec() const;
+      const std::vector<uint_least8_t>& bcidVec() const;
       /// set bcidVec
-      void setBcidVec(const std::vector<unsigned int>&);      
+      void setBcidVec(const std::vector<uint_least8_t>&);      
       
 
       // Quantities with same number of slices as ADC data
       
       /// get adc
-      const std::vector<unsigned int>& adc() const;
+      const std::vector<uint_least8_t>& adc() const;
       /// set adc
-      void setAdc(const std::vector<unsigned int>&);    
+      void setAdc(const std::vector<uint_least8_t>&);    
       
       /// get bcidExt
-      const std::vector<unsigned int>& bcidExt() const;
+      const std::vector<uint_least8_t>& bcidExt() const;
       /// set bcidExt
-      void setBcidExt(const std::vector<unsigned int>&);       
+      void setBcidExt(const std::vector<uint_least8_t>&);       
       
 
       // One error word/tower/event
       
       /// get error
-      unsigned int error() const;
+      uint_least8_t error() const;
       /// set error
-      void setError(unsigned int);
+      void setError(uint_least8_t);
 
       // Not part of readout, but to extract "peak" slice from vectors
       
       /// get peak
-      unsigned int peak() const;
+      uint_least8_t peak() const;
       /// set peak
-      void setPeak(unsigned int);
+      void setPeak(uint_least8_t);
       
       /// get adcPeak
-      unsigned int adcPeak() const;
+      uint_least8_t adcPeak() const;
       /// set adcPeak
-      void setAdcPeak(unsigned int);
+      void setAdcPeak(uint_least8_t);
       
       
       /// get cpET from peak of lut_cp
-      unsigned int cpET() const;
+      uint_least8_t cpET() const;
       
       /// get jepET from peak of lut_jep
-      unsigned int jepET() const;
+      uint_least8_t jepET() const;
       
       
 
@@ -143,7 +145,7 @@ namespace xAOD {
       bool isJepSaturated() const;
     
     private:
-      static const unsigned int m_saturation = 255;
+      static const uint_least8_t m_saturation = 255;
   
   }; // class TriggerTower_v2
 } // namespace xAOD

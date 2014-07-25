@@ -13,29 +13,29 @@ namespace xAOD{
   {        
   }
   
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<unsigned int> , lut_cp , setLut_cp )
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<unsigned int> , lut_jep , setLut_jep )
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<unsigned int> , correction , setCorrection )
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<unsigned int> , bcidVec , setBcidVec )
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<unsigned int> , adc , setAdc )
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<unsigned int> , bcidExt , setBcidExt )                                                                                                                                    
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , lut_cp , setLut_cp )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , lut_jep , setLut_jep )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , correction , setCorrection )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , bcidVec , setBcidVec )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , adc , setAdc )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , bcidExt , setBcidExt )                                                                                                                                    
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, unsigned int , coolId , setCoolId )
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, unsigned int , layer , setLayer )
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , layer , setLayer )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, float , eta , setEta )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, float , phi , setPhi )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, unsigned int , error , setError )
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, unsigned int , peak , setPeak )
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, unsigned int , adcPeak , setAdcPeak )  
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , error , setError )
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , peak , setPeak )
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , adcPeak , setAdcPeak )  
   
   
   /// Fill tower with all information
-  void TriggerTower_v2::initialize(const unsigned int& coolId,const unsigned int& layer,const float& eta,const float& phi,
-                                   const std::vector<unsigned int>& lut_cp,const std::vector<unsigned int>& lut_jep,
-                                   const std::vector<unsigned int>& correction,const std::vector<unsigned int>& bcidVec,
-                                   const std::vector<unsigned int>& adc,const std::vector<unsigned int>& bcidExt,
-                                   const unsigned int& error,
-                                   const unsigned int& peak,
-                                   const unsigned int adcPeak)
+  void TriggerTower_v2::initialize(const unsigned int& coolId,const uint_least8_t& layer,const float& eta,const float& phi,
+                                   const std::vector<uint_least8_t>& lut_cp,const std::vector<uint_least8_t>& lut_jep,
+                                   const std::vector<uint_least8_t>& correction,const std::vector<uint_least8_t>& bcidVec,
+                                   const std::vector<uint_least8_t>& adc,const std::vector<uint_least8_t>& bcidExt,
+                                   const uint_least8_t& error,
+                                   const uint_least8_t& peak,
+                                   const uint_least8_t& adcPeak)
   {
     this->setCoolId( coolId );
     this->setLayer( layer );
@@ -53,13 +53,13 @@ namespace xAOD{
   }
     
   /// get cpET from peak of lut_cp
-  unsigned int TriggerTower_v2::cpET() const
+  uint_least8_t TriggerTower_v2::cpET() const
   {
     return this->lut_cp()[ this->peak() ];
   }
   
   /// get jepET from peak of lut_jep
-  unsigned int TriggerTower_v2::jepET() const
+  uint_least8_t TriggerTower_v2::jepET() const
   {
     return this->lut_jep()[ this->peak() ];
   }
