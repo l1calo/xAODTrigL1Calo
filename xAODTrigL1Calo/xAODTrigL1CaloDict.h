@@ -63,6 +63,10 @@
 #include "xAODTrigL1Calo/versions/TriggerTowerContainer_v1.h"
 #include "xAODTrigL1Calo/versions/TriggerTowerAuxContainer_v1.h"
 
+#include "xAODTrigL1Calo/versions/TriggerTower_v2.h"
+#include "xAODTrigL1Calo/versions/TriggerTowerContainer_v2.h"
+#include "xAODTrigL1Calo/versions/TriggerTowerAuxContainer_v2.h"
+
 namespace {
    struct GCCXML_DUMMY_INSTANTIATION_XAODTRIGL1CALO {
       
@@ -187,7 +191,16 @@ namespace {
       std::vector< ElementLink< xAOD::TriggerTowerContainer_v1 > > TriggerTower_el2;
       // Element link vector(s):
       ElementLinkVector< xAOD::TriggerTowerContainer_v1 > TriggerTower_elv1;
-      std::vector< ElementLinkVector< xAOD::TriggerTowerContainer_v1 > > TriggerTower_elv2;        
+      std::vector< ElementLinkVector< xAOD::TriggerTowerContainer_v1 > > TriggerTower_elv2; 
+      
+      // Container(s):
+      xAOD::TriggerTowerContainer_v2 TriggerTower_v2_c1;
+      // Element link(s):
+      ElementLink< xAOD::TriggerTowerContainer_v2 > TriggerTower_v2_el1;
+      std::vector< ElementLink< xAOD::TriggerTowerContainer_v2 > > TriggerTower_v2_el2;
+      // Element link vector(s):
+      ElementLinkVector< xAOD::TriggerTowerContainer_v2 > TriggerTower_v2_elv1;
+      std::vector< ElementLinkVector< xAOD::TriggerTowerContainer_v2 > > TriggerTower_v2_elv2;        
      
    };
 }

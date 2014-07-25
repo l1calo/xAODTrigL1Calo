@@ -1,3 +1,7 @@
+2014-07-25 John Morris <john.morris@cern.ch>
+	* Adding a prototype run2 TriggerTower
+	* Tagging as xAODTrigL1Calo-00-00-08
+
 2014-04-08 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
 	* Could remove some of the exclusion rules after the recent
 	  bugfixes in rootcling, but not all of them.
