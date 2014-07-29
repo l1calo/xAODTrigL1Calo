@@ -15,15 +15,16 @@ namespace xAOD{
   
   AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , lut_cp , setLut_cp )
   AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , lut_jep , setLut_jep )
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , correction , setCorrection )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<int_least16_t> , correction , setCorrection )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , correctionEnabled , setCorrectionEnabled )
   AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , bcidVec , setBcidVec )
-  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , adc , setAdc )
+  AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least16_t> , adc , setAdc )
   AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , bcidExt , setBcidExt )                                                                                                                                    
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, unsigned int , coolId , setCoolId )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , layer , setLayer )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, float , eta , setEta )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, float , phi , setPhi )  
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , error , setError )
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least16_t , error , setError )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , peak , setPeak )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , adcPeak , setAdcPeak )  
   
@@ -31,9 +32,10 @@ namespace xAOD{
   /// Fill tower with all information
   void TriggerTower_v2::initialize(const unsigned int& coolId,const uint_least8_t& layer,const float& eta,const float& phi,
                                    const std::vector<uint_least8_t>& lut_cp,const std::vector<uint_least8_t>& lut_jep,
-                                   const std::vector<uint_least8_t>& correction,const std::vector<uint_least8_t>& bcidVec,
-                                   const std::vector<uint_least8_t>& adc,const std::vector<uint_least8_t>& bcidExt,
-                                   const uint_least8_t& error,
+                                   const std::vector<int_least16_t>& correction,const std::vector<uint_least8_t>& correctionEnabled,
+                                   const std::vector<uint_least8_t>& bcidVec,const std::vector<uint_least16_t>& adc,
+                                   const std::vector<uint_least8_t>& bcidExt,
+                                   const uint_least16_t& error,
                                    const uint_least8_t& peak,
                                    const uint_least8_t& adcPeak)
   {
@@ -44,6 +46,7 @@ namespace xAOD{
     this->setLut_cp( lut_cp );
     this->setLut_jep( lut_jep );
     this->setCorrection( correction );
+    this->setCorrectionEnabled( correctionEnabled );
     this->setBcidVec( bcidVec );
     this->setAdc( adc );
     this->setBcidExt( bcidExt );

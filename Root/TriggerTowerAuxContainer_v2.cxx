@@ -15,6 +15,7 @@ namespace xAOD {
     AUX_VARIABLE( lut_cp );
     AUX_VARIABLE( lut_jep );
     AUX_VARIABLE( correction );
+    AUX_VARIABLE( correctionEnabled );
     AUX_VARIABLE( bcidVec );
     AUX_VARIABLE( adc );
     AUX_VARIABLE( bcidExt );

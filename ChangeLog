@@ -1,3 +1,8 @@
+2014-07-29 John Morris <john.morris@cern.ch>
+	* Updating TriggerTower_v2
+	* Tagging as xAODTrigL1Calo-00-00-10
+
+
 2014-07-25 John Morris <john.morris@cern.ch>
 	* Pass by refernece in TriggerTower_v2::initialize fix
 	* Change from unsigned int to uint_least8_t for TriggerTowerAuxContainer_v2

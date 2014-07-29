@@ -35,15 +35,16 @@ namespace xAOD{
     // Quantities with same number of slices as LUT data
     std::vector<std::vector<uint_least8_t> > lut_cp;
     std::vector<std::vector<uint_least8_t> > lut_jep;
-    std::vector<std::vector<uint_least8_t> > correction;
+    std::vector<std::vector<int_least16_t> > correction;
+    std::vector<std::vector<uint_least8_t> > correctionEnabled;
     std::vector<std::vector<uint_least8_t> > bcidVec;
 
     // Quantities with same number of slices as ADC data
-    std::vector<std::vector<uint_least8_t> > adc;
+    std::vector<std::vector<uint_least16_t> > adc;
     std::vector<std::vector<uint_least8_t> > bcidExt;
 
     // One error word/tower/event
-    std::vector<uint_least8_t> error;
+    std::vector<uint_least16_t> error;
 
     // Not part of readout, but to extract "peak" slice from vectors
     std::vector<uint_least8_t> peak;

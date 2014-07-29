@@ -46,9 +46,10 @@ namespace xAOD {
       /// Fill tower with all information
       void initialize(const unsigned int& coolId,const uint_least8_t& layer,const float& eta,const float& phi,
                       const std::vector<uint_least8_t>& lut_cp,const std::vector<uint_least8_t>& lut_jep,
-                      const std::vector<uint_least8_t>& correction,const std::vector<uint_least8_t>& bcidVec,
-                      const std::vector<uint_least8_t>& adc,const std::vector<uint_least8_t>& bcidExt,
-                      const uint_least8_t& error,
+                      const std::vector<int_least16_t>& correction,const std::vector<uint_least8_t>& correctionEnabled,
+                      const std::vector<uint_least8_t>& bcidVec,const std::vector<uint_least16_t>& adc,
+                      const std::vector<uint_least8_t>& bcidExt,
+                      const uint_least16_t& error,
                       const uint_least8_t& peak,
                       const uint_least8_t& adcPeak);
 
@@ -89,9 +90,14 @@ namespace xAOD {
       void setLut_jep(const std::vector<uint_least8_t>&);      
       
       /// get correction
-      const std::vector<uint_least8_t>& correction() const;
+      const std::vector<int_least16_t>& correction() const;
       /// set correction
-      void setCorrection(const std::vector<uint_least8_t>&);  
+      void setCorrection(const std::vector<int_least16_t>&);  
+      
+       /// get correctionEnabled
+      const std::vector<uint_least8_t>& correctionEnabled() const;
+      /// set correctionEnabled
+      void setCorrectionEnabled(const std::vector<uint_least8_t>&);      
       
       /// get bcidVec
       const std::vector<uint_least8_t>& bcidVec() const;
@@ -102,9 +108,9 @@ namespace xAOD {
       // Quantities with same number of slices as ADC data
       
       /// get adc
-      const std::vector<uint_least8_t>& adc() const;
+      const std::vector<uint_least16_t>& adc() const;
       /// set adc
-      void setAdc(const std::vector<uint_least8_t>&);    
+      void setAdc(const std::vector<uint_least16_t>&);    
       
       /// get bcidExt
       const std::vector<uint_least8_t>& bcidExt() const;
@@ -115,9 +121,9 @@ namespace xAOD {
       // One error word/tower/event
       
       /// get error
-      uint_least8_t error() const;
+      uint_least16_t error() const;
       /// set error
-      void setError(uint_least8_t);
+      void setError(uint_least16_t);
 
       // Not part of readout, but to extract "peak" slice from vectors
       
