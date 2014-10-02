@@ -5,7 +5,8 @@
 
 // STL include(s):
 #include <vector>
-#include <cstdint>
+// System include(s):
+#include <stdint.h>
 
 // EDM include(s):
 #include "xAODCore/AuxContainerBase.h"
@@ -27,7 +28,7 @@ namespace xAOD{
   private:
     
     // Tower identifiers
-    std::vector<unsigned int> coolId;
+    std::vector<uint_least32_t> coolId;
     std::vector<uint_least8_t> layer;
     std::vector<float> eta;
     std::vector<float> phi;

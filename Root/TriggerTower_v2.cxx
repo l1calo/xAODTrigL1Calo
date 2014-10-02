@@ -20,7 +20,7 @@ namespace xAOD{
   AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , bcidVec , setBcidVec )
   AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least16_t> , adc , setAdc )
   AUXSTORE_OBJECT_SETTER_AND_GETTER( TriggerTower_v2 , std::vector<uint_least8_t> , bcidExt , setBcidExt )                                                                                                                                    
-  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, unsigned int , coolId , setCoolId )
+  AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least32_t , coolId , setCoolId )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, uint_least8_t , layer , setLayer )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, float , eta , setEta )
   AUXSTORE_PRIMITIVE_SETTER_AND_GETTER( TriggerTower_v2, float , phi , setPhi )  
@@ -30,7 +30,7 @@ namespace xAOD{
   
   
   /// Fill tower with all information
-  void TriggerTower_v2::initialize(const unsigned int& coolId,const uint_least8_t& layer,const float& eta,const float& phi,
+  void TriggerTower_v2::initialize(const uint_least32_t& coolId,const uint_least8_t& layer,const float& eta,const float& phi,
                                    const std::vector<uint_least8_t>& lut_cp,const std::vector<uint_least8_t>& lut_jep,
                                    const std::vector<int_least16_t>& correction,const std::vector<uint_least8_t>& correctionEnabled,
                                    const std::vector<uint_least8_t>& bcidVec,const std::vector<uint_least16_t>& adc,

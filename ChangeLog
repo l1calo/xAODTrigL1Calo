@@ -1,3 +1,9 @@
+2014-10-02 John Morris <john.morris@cern.ch>
+	* Change to stdint.h
+	* CoolId type is uint_least32_t on Murrough's advice
+	* Tagging as xAODTrigL1Calo-00-00-11
+
+
 2014-07-29 John Morris <john.morris@cern.ch>
 	* Updating TriggerTower_v2
 	* Tagging as xAODTrigL1Calo-00-00-10

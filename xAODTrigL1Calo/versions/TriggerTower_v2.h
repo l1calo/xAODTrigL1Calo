@@ -7,11 +7,12 @@
 #include "AthLinks/ElementLink.h"
 #include "AthContainers/AuxElement.h"
 
-#include <cstdint>
+// System include(s):
+#include <stdint.h>
 
 namespace xAOD {
 
-  /// Description of TriggerTower_v1
+  /// Description of TriggerTower_v2
   ///
   /// @author John Morris <john.morris@cern.ch>
   ///
@@ -44,7 +45,7 @@ namespace xAOD {
       TriggerTower_v2();
       
       /// Fill tower with all information
-      void initialize(const unsigned int& coolId,const uint_least8_t& layer,const float& eta,const float& phi,
+      void initialize(const uint_least32_t& coolId,const uint_least8_t& layer,const float& eta,const float& phi,
                       const std::vector<uint_least8_t>& lut_cp,const std::vector<uint_least8_t>& lut_jep,
                       const std::vector<int_least16_t>& correction,const std::vector<uint_least8_t>& correctionEnabled,
                       const std::vector<uint_least8_t>& bcidVec,const std::vector<uint_least16_t>& adc,
@@ -56,9 +57,9 @@ namespace xAOD {
       // Tower identifiers
       
       /// get coolId
-      unsigned int coolId() const;
+      uint_least32_t coolId() const;
       /// set coolID
-      void setCoolId(unsigned int);
+      void setCoolId(uint_least32_t);
       
       /// get layer
       uint_least8_t layer() const;
@@ -143,8 +144,7 @@ namespace xAOD {
       
       /// get jepET from peak of lut_jep
       uint_least8_t jepET() const;
-      
-      
+           
 
       /// Is tower saturated?
       bool isCpSaturated() const;
